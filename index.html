@@ -4,30 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spud Man Riverton | World Famous Spuds</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #FFB300;
-            --primary-dark: #E65100;
+            --primary: #FFC107;
+            --primary-dark: #d39e00;
             --secondary: #5D4037;
-            --accent: #388E3C;
-            --fun: #FF6B35;
-            --red: #d12027;
-            --bg: #FFFDF5;
-            --dark: #1a1a1a;
-            --shadow: 0 4px 20px rgba(0,0,0,0.12);
-            --shadow-lg: 0 10px 40px rgba(0,0,0,0.2);
-            --radius: 20px;
+            --accent: #2E7D32;
+            --toast-red: #d12027;
+            --bg-light: #FDFBF7;
+            --text-dark: #1a1a1a;
+            --shadow: 0 4px 12px rgba(0,0,0,0.1);
+            --shadow-hover: 0 8px 24px rgba(0,0,0,0.18);
+            --radius: 15px;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'Nunito', sans-serif;
-            background: var(--bg);
-            color: var(--dark);
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
             line-height: 1.6;
             display: flex;
             flex-direction: column;
@@ -36,33 +32,34 @@
         }
 
         img { max-width: 100%; display: block; }
-        h1, h2, h3 { font-family: 'Fredoka One', cursive; }
 
         /* TEMP ALERT */
         .temp-alert {
             display: none;
-            background: linear-gradient(90deg, #d12027, #ff4444);
+            background-color: #d12027;
             color: white;
             text-align: center;
             padding: 14px;
-            font-weight: 800;
+            font-weight: 700;
             font-size: 1.05rem;
+            line-height: 1.4;
         }
 
         /* BANNER */
         .banner {
-            background: linear-gradient(90deg, var(--accent), #2E7D32);
+            background-color: var(--accent);
             color: white;
             text-align: center;
             padding: 12px;
-            font-weight: 800;
-            font-size: 1rem;
+            font-weight: 700;
+            font-size: 1.05rem;
+            letter-spacing: 0.3px;
         }
 
         /* HEADER */
         header {
             background: white;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            box-shadow: var(--shadow);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -70,70 +67,70 @@
         .header-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 12px 20px;
+            padding: 8px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             gap: 15px;
             flex-wrap: wrap;
         }
+
+        /* LOGO */
         .logo {
             display: flex;
             align-items: center;
-            gap: 12px;
             cursor: pointer;
-            text-decoration: none;
         }
         .logo img {
-            height: 65px;
+            height: 85px;
             width: auto;
-            transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transition: transform 0.2s ease;
         }
-        .logo:hover img { transform: rotate(-12deg) scale(1.12); }
-        .logo-text {
-            font-family: 'Fredoka One', cursive;
-            font-size: 2.2rem;
-            color: var(--secondary);
-            line-height: 1;
-        }
-        .logo-text span { color: var(--primary); }
+        .logo img:hover { transform: scale(1.04); }
 
         /* NAV */
         nav { display: flex; align-items: center; gap: 15px; }
-        nav ul { display: flex; gap: 4px; list-style: none; align-items: center; }
+        nav ul {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+            align-items: center;
+        }
         nav a.nav-link {
             text-decoration: none;
-            color: var(--dark);
-            font-weight: 700;
-            font-size: 1rem;
-            padding: 8px 15px;
-            border-radius: 50px;
-            transition: all 0.2s;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 1.05rem;
             cursor: pointer;
+            padding-bottom: 4px;
+            border-bottom: 3px solid transparent;
+            transition: all 0.25s;
         }
-        nav a.nav-link:hover { background: #FFF3E0; color: var(--primary-dark); }
-        nav a.nav-link.active { background: var(--primary); color: white; }
+        nav a.nav-link:hover, nav a.nav-link.active {
+            color: var(--primary-dark);
+            border-bottom-color: var(--primary);
+        }
 
         .btn-group { display: flex; gap: 10px; align-items: center; }
         .btn-phone, .btn-online {
-            padding: 10px 18px;
+            padding: 10px 20px;
             border-radius: 50px;
-            font-weight: 800;
+            font-weight: 700;
             text-decoration: none;
-            font-size: 0.9rem;
-            transition: transform 0.2s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.2s;
+            font-size: 0.92rem;
+            transition: transform 0.2s ease, box-shadow 0.2s;
             display: inline-flex;
             align-items: center;
-            gap: 6px;
+            gap: 7px;
             cursor: pointer;
             border: none;
-            font-family: 'Nunito', sans-serif;
+            font-family: inherit;
         }
         .btn-phone { background: var(--secondary); color: white !important; }
-        .btn-online { background: var(--red); color: white !important; }
+        .btn-online { background: var(--toast-red); color: white !important; }
         .btn-phone:hover, .btn-online:hover {
-            transform: translateY(-3px) scale(1.04);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
         }
 
         /* HAMBURGER */
@@ -148,7 +145,7 @@
         }
         .hamburger span {
             display: block;
-            width: 26px;
+            width: 25px;
             height: 3px;
             background: var(--secondary);
             border-radius: 3px;
@@ -160,48 +157,30 @@
 
         /* HERO */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)), url('background.jpg');
+            background: linear-gradient(rgba(0,0,0,0.52), rgba(0,0,0,0.52)), url('background.jpg');
             background-size: cover;
             background-position: center;
             text-align: center;
             color: white;
-            padding: 130px 20px;
-            position: relative;
-            overflow: hidden;
+            padding: 110px 20px;
+            margin-bottom: 40px;
         }
-        .floating-potatoes {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            pointer-events: none;
-        }
-        .potato-float {
-            position: absolute;
-            animation: float-up linear infinite;
-            opacity: 0.35;
-        }
-        @keyframes float-up {
-            0%   { transform: translateY(110%) rotate(0deg); opacity: 0; }
-            10%  { opacity: 0.35; }
-            90%  { opacity: 0.35; }
-            100% { transform: translateY(-120px) rotate(360deg); opacity: 0; }
-        }
-        .hero-content { position: relative; z-index: 1; }
         .hero h1 {
-            font-size: 4.5rem;
+            font-size: 3.5rem;
+            font-weight: 900;
             margin-bottom: 15px;
-            text-shadow: 3px 3px 12px rgba(0,0,0,0.7);
-            animation: drop-in 0.8s cubic-bezier(0.34,1.56,0.64,1) both;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+            animation: fadeUp 0.7s ease both;
         }
         .hero p {
-            font-size: 1.6rem;
-            margin-bottom: 35px;
-            font-weight: 700;
-            text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
-            animation: drop-in 0.8s 0.15s cubic-bezier(0.34,1.56,0.64,1) both;
+            font-size: 1.4rem;
+            margin-bottom: 30px;
+            font-weight: 500;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
+            animation: fadeUp 0.7s 0.15s ease both;
         }
-        @keyframes drop-in {
-            from { opacity: 0; transform: translateY(-30px); }
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
             to   { opacity: 1; transform: translateY(0); }
         }
         .hero-actions {
@@ -209,151 +188,118 @@
             justify-content: center;
             gap: 15px;
             flex-wrap: wrap;
-            animation: drop-in 0.8s 0.3s cubic-bezier(0.34,1.56,0.64,1) both;
+            animation: fadeUp 0.7s 0.3s ease both;
         }
         .hero-btn {
-            padding: 16px 36px;
-            border-radius: 50px;
+            padding: 14px 30px;
+            border-radius: 5px;
             font-size: 1.1rem;
-            font-weight: 800;
+            font-weight: 700;
             cursor: pointer;
             border: none;
             text-decoration: none;
-            transition: transform 0.25s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.25s;
-            font-family: 'Nunito', sans-serif;
+            transition: transform 0.2s ease, box-shadow 0.2s;
             display: inline-flex;
             align-items: center;
             gap: 8px;
+            font-family: inherit;
         }
-        .hero-btn:hover {
-            transform: scale(1.08) translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.35);
-        }
-        .btn-hero-menu  { background: var(--primary); color: #1a1a1a; }
-        .btn-hero-call  { background: var(--secondary); color: white; }
-        .btn-surprise {
-            background: linear-gradient(135deg, #FF6B35, #FF3CAC);
-            color: white;
-            animation: wiggle 4s 3s infinite;
-        }
-        .btn-surprise:hover { animation: none; }
-        @keyframes wiggle {
-            0%,88%,100% { transform: scale(1); }
-            92% { transform: scale(1.06) rotate(-2deg); }
-            96% { transform: scale(1.06) rotate(2deg); }
-        }
+        .hero-btn:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.35); }
+        .btn-hero-menu { background: var(--primary); color: #1a1a1a; }
+        .btn-hero-call { background: var(--secondary); color: white; }
+        .btn-surprise  { background: var(--toast-red); color: white; }
 
         /* PAGE SECTIONS */
         .page-section {
             display: none;
-            padding: 50px 20px;
+            padding: 40px 20px;
             max-width: 1200px;
             margin: 0 auto;
             width: 100%;
+            animation: fadeIn 0.35s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to   { opacity: 1; transform: translateY(0); }
         }
         .page-section.active-page { display: block; }
         #home.page-section { padding: 0; max-width: 100%; }
-        .home-inner { padding: 60px 20px; max-width: 1200px; margin: 0 auto; }
+        .home-inner { padding: 40px 20px; max-width: 1200px; margin: 0 auto; }
 
         /* SCROLL REVEAL */
         .reveal {
             opacity: 0;
-            transform: translateY(28px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
+            transform: translateY(18px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
         }
         .reveal.visible { opacity: 1; transform: translateY(0); }
 
-        /* SECTION HEADING */
-        .section-heading { text-align: center; margin-bottom: 50px; }
-        .section-heading h1 {
-            font-size: 3rem;
-            color: var(--secondary);
-            display: inline-block;
-        }
-        .section-heading h1::after {
-            content: '';
+        /* HOME */
+        .home-intro { text-align: center; max-width: 750px; margin: 0 auto 40px; }
+        .home-intro h2 { font-size: 2.4rem; font-weight: 900; color: var(--secondary); margin-bottom: 14px; }
+        .home-intro p { font-size: 1.1rem; color: #555; line-height: 1.8; }
+        .mascot-img {
+            height: 190px;
+            margin: 25px auto;
             display: block;
-            height: 5px;
-            background: linear-gradient(90deg, var(--primary), var(--fun));
-            border-radius: 3px;
-            margin-top: 5px;
+            animation: gentle-float 4s ease-in-out infinite;
         }
-
-        /* HOME INTRO */
-        .home-intro { text-align: center; max-width: 750px; margin: 0 auto 50px; }
-        .home-intro h2 { font-size: 3rem; color: var(--secondary); margin-bottom: 15px; }
-        .home-intro p { font-size: 1.15rem; color: #555; line-height: 1.8; }
-        .mascot-bounce {
-            height: 170px;
-            margin: 30px auto;
-            display: block;
-            animation: mascot-float 3s ease-in-out infinite;
-        }
-        @keyframes mascot-float {
-            0%,100% { transform: translateY(0); }
-            50%      { transform: translateY(-16px); }
+        @keyframes gentle-float {
+            0%, 100% { transform: translateY(0); }
+            50%       { transform: translateY(-12px); }
         }
 
         /* FEATURE CARDS */
         .feature-cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 22px;
         }
         .feature-card {
             background: white;
             border-radius: var(--radius);
-            padding: 35px 25px;
+            padding: 30px 22px;
             text-align: center;
             box-shadow: var(--shadow);
-            transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.3s;
+            border-top: 4px solid var(--primary);
+            transition: transform 0.25s ease, box-shadow 0.25s;
         }
-        .feature-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
-        .feature-card .icon { font-size: 3rem; margin-bottom: 12px; }
-        .feature-card h3 { color: var(--secondary); font-size: 1.4rem; margin-bottom: 8px; }
-        .feature-card p  { color: #666; font-size: 0.95rem; }
+        .feature-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
+        .feature-card .icon { font-size: 2.4rem; margin-bottom: 12px; }
+        .feature-card h3 { color: var(--secondary); font-size: 1.2rem; font-weight: 800; margin-bottom: 7px; }
+        .feature-card p { color: #666; font-size: 0.92rem; }
 
-        /* MENU CATEGORY */
-        .menu-category { margin-bottom: 70px; }
-        .menu-category h2 {
-            font-size: 2.4rem;
+        /* MENU */
+        .menu-category { margin-bottom: 60px; }
+        .menu-category > h2 {
+            font-size: 2.2rem;
+            font-weight: 900;
             color: var(--secondary);
-            margin-bottom: 28px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
+            border-bottom: 3px solid var(--primary);
+            padding-bottom: 10px;
+            margin-bottom: 25px;
         }
-        .menu-category h2::after {
-            content: '';
-            flex: 1;
-            height: 3px;
-            background: linear-gradient(90deg, var(--primary), transparent);
-            border-radius: 3px;
-        }
-
-        /* MENU GRID */
         .menu-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(295px, 1fr));
             gap: 25px;
         }
 
         /* CARD FLIP */
         .menu-item {
-            height: 390px;
-            perspective: 1200px;
+            height: 375px;
+            perspective: 1100px;
             cursor: pointer;
         }
         .menu-item-inner {
             position: relative;
             width: 100%; height: 100%;
-            transition: transform 0.65s cubic-bezier(0.4,0,0.2,1);
+            transition: transform 0.6s ease;
             transform-style: preserve-3d;
         }
         .menu-item:hover .menu-item-inner,
-        .menu-item.flipped .menu-item-inner {
-            transform: rotateY(180deg);
-        }
+        .menu-item.flipped .menu-item-inner { transform: rotateY(180deg); }
+
         .menu-front, .menu-back {
             position: absolute;
             top: 0; left: 0;
@@ -368,157 +314,164 @@
             box-shadow: var(--shadow);
             display: flex;
             flex-direction: column;
+            border-left: 5px solid var(--primary);
         }
+        .menu-item:hover .menu-front { box-shadow: var(--shadow-hover); }
+
         .menu-front-img {
-            width: 100%; height: 210px;
+            width: 100%; height: 205px;
             object-fit: cover;
+            border-bottom: 3px solid var(--primary);
             flex-shrink: 0;
         }
         .menu-front-no-img {
-            width: 100%; height: 210px;
-            background: linear-gradient(135deg, #FFF3E0, #FFE0B2);
+            width: 100%; height: 205px;
+            background: linear-gradient(135deg, #FFF8E1, #FFF3CD);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 5rem;
+            font-size: 4.5rem;
             flex-shrink: 0;
+            border-bottom: 3px solid var(--primary);
         }
         .menu-front-details {
-            padding: 16px;
+            padding: 15px;
             flex: 1;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
-        .menu-front-name {
-            font-family: 'Fredoka One', cursive;
-            font-size: 1.3rem;
-            color: var(--secondary);
-            line-height: 1.2;
-            margin-bottom: 8px;
-        }
-        .price-badge {
-            background: var(--primary);
-            color: var(--dark);
-            font-weight: 900;
-            font-size: 1.05rem;
-            padding: 4px 12px;
-            border-radius: 50px;
-            display: inline-block;
-        }
-        .flip-hint {
-            color: #bbb;
-            font-size: 0.78rem;
-            font-weight: 600;
-            text-align: center;
-            margin-top: 6px;
-        }
-        .bestseller {
+        .menu-front-name { font-size: 1.2rem; font-weight: 800; color: #333; margin-bottom: 6px; line-height: 1.2; }
+        .price-tag { color: var(--secondary); font-weight: 800; font-size: 1.05rem; }
+        .flip-hint { color: #ccc; font-size: 0.73rem; font-weight: 600; text-align: right; margin-top: 4px; }
+
+        .bestseller-badge {
             position: absolute;
-            top: 12px; right: 12px;
-            background: var(--red);
+            top: 10px; right: 10px;
+            background: var(--toast-red);
             color: white;
             font-size: 0.68rem;
-            font-weight: 900;
+            font-weight: 800;
             padding: 4px 10px;
             border-radius: 50px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
             z-index: 2;
-            animation: badge-pulse 1.8s ease infinite;
         }
-        @keyframes badge-pulse {
-            0%,100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-        }
+
         .menu-back {
-            background: linear-gradient(145deg, #3E2723, #5D4037);
+            background: var(--secondary);
             transform: rotateY(180deg);
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 28px;
+            padding: 25px;
             text-align: center;
             box-shadow: var(--shadow);
         }
-        .menu-back h4 {
-            font-family: 'Fredoka One', cursive;
-            color: var(--primary);
-            font-size: 1.4rem;
-            margin-bottom: 12px;
-        }
-        .menu-back p  { color: #f5e6d0; font-size: 0.95rem; line-height: 1.75; }
+        .menu-back h4 { color: var(--primary); font-size: 1.3rem; font-weight: 900; margin-bottom: 12px; }
+        .menu-back p { color: #f5e6d0; font-size: 0.93rem; line-height: 1.75; }
         .back-price {
-            margin-top: 16px;
+            margin-top: 15px;
             background: var(--primary);
-            color: var(--dark);
+            color: var(--text-dark);
             font-weight: 900;
-            font-size: 1.2rem;
-            padding: 6px 22px;
-            border-radius: 50px;
+            font-size: 1.1rem;
+            padding: 5px 18px;
+            border-radius: 4px;
         }
-        .back-yum { margin-top: 10px; color: #FFD54F; font-size: 0.85rem; font-weight: 700; }
+        .back-note { margin-top: 8px; color: #FFD54F; font-size: 0.8rem; }
 
-        /* BUILD YOUR OWN */
-        .byo-wrap {
+        /* FRY CALLOUT */
+        .fry-callout {
+            margin-top: 20px;
+            background: linear-gradient(135deg, #fff8e1, #fff3cd);
+            border-left: 5px solid var(--primary-dark);
+            border-radius: 8px;
+            padding: 14px 20px;
+            font-size: 1rem;
+            color: var(--secondary);
+            font-weight: 600;
+        }
+
+        /* COMING SOON */
+        .coming-soon-card {
             background: white;
-            padding: 35px;
             border-radius: var(--radius);
             box-shadow: var(--shadow);
-            border-top: 6px solid var(--accent);
-        }
-        .byo-tracker {
-            border-radius: 15px;
-            padding: 20px 28px;
+            border: 2px dashed var(--primary);
+            padding: 42px 32px;
             text-align: center;
             margin-bottom: 25px;
+        }
+        .coming-soon-badge {
+            display: inline-block;
+            background: var(--toast-red);
+            color: white;
+            font-weight: 800;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 5px 16px;
+            border-radius: 50px;
+            margin-bottom: 16px;
+        }
+        .coming-soon-card h3 { font-size: 1.8rem; font-weight: 900; color: var(--secondary); margin-bottom: 12px; }
+        .coming-soon-card p { font-size: 1.02rem; color: #555; max-width: 560px; margin: 0 auto 10px; line-height: 1.6; }
+        .coming-soon-sub { font-size: 0.9rem !important; color: #888 !important; font-style: italic; }
+
+        /* BUILD YOUR OWN */
+        .byo-container {
+            background: white;
+            padding: 30px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border-top: 5px solid var(--accent);
+        }
+        .byo-tracker {
+            background: var(--secondary);
+            color: white;
+            border-radius: 10px;
+            padding: 16px 24px;
+            margin-bottom: 22px;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 25px;
+            gap: 20px;
             flex-wrap: wrap;
         }
-        .byo-tracker.spud-tracker  { background: linear-gradient(135deg, var(--secondary), #3E2723); }
-        .byo-tracker.salad-tracker { background: linear-gradient(135deg, var(--accent), #1B5E20); }
-        .tracker-base { font-size: 1rem; color: rgba(255,255,255,0.8); }
-        .tracker-label { font-size: 0.75rem; color: rgba(255,255,255,0.6); margin-bottom: 2px; }
-        .tracker-total {
-            font-family: 'Fredoka One', cursive;
-            font-size: 2.6rem;
-            line-height: 1;
-        }
-        .spud-tracker  .tracker-total { color: var(--primary); }
-        .salad-tracker .tracker-total { color: #CCFF90; }
-
-        .byo-cols {
+        .tracker-base { font-size: 0.95rem; opacity: 0.85; }
+        .tracker-label { font-size: 0.7rem; opacity: 0.65; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 2px; }
+        .tracker-total { font-size: 2.2rem; font-weight: 900; color: var(--primary); line-height: 1; }
+        .byo-columns {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
             gap: 25px;
         }
         .byo-col h4 {
-            font-family: 'Fredoka One', cursive;
             color: var(--secondary);
-            font-size: 1.15rem;
+            font-size: 1.05rem;
+            font-weight: 800;
             margin-bottom: 12px;
-            padding-bottom: 8px;
+            padding-bottom: 7px;
             border-bottom: 2px solid var(--primary);
         }
-        .byo-col ul  { list-style: none; }
-        .byo-col li  { margin-bottom: 5px; }
+        .byo-col ul { list-style: none; }
+        .byo-col li { margin-bottom: 4px; }
         .byo-col label {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 7px;
             cursor: pointer;
-            color: #444;
-            font-size: 0.93rem;
-            padding: 3px 7px;
-            border-radius: 7px;
+            color: #555;
+            font-size: 0.92rem;
+            padding: 3px 6px;
+            border-radius: 5px;
             transition: background 0.15s;
         }
         .byo-col label:hover { background: #FFF8E1; }
-        .byo-col input[type=checkbox] { accent-color: var(--primary); width: 15px; height: 15px; cursor: pointer; }
+        .byo-col input[type=checkbox] { accent-color: var(--secondary); width: 14px; height: 14px; cursor: pointer; }
 
         /* SIMPLE LIST */
         .simple-list { list-style: none; }
@@ -526,178 +479,146 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 9px 4px;
-            border-bottom: 1px dashed #eee;
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
             font-size: 0.98rem;
         }
         .simple-list li:last-child { border-bottom: none; }
 
         /* FAMILY PACKS */
-        .family-card {
+        .family-pack-card {
             background: white;
-            border: 3px solid var(--primary);
+            border: 2px solid var(--primary);
             border-radius: var(--radius);
-            padding: 35px;
+            padding: 30px;
             box-shadow: var(--shadow);
         }
-        .family-card h3 { color: var(--secondary); font-size: 1.8rem; text-align: center; margin-bottom: 20px; }
-        .pack-list { list-style: none; }
+        .pack-list { list-style: none; margin-top: 15px; }
         .pack-list li {
-            padding: 15px 5px;
-            border-bottom: 1px dashed #eee;
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
             font-size: 1.02rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        .pack-price {
-            background: var(--primary);
-            color: var(--dark);
-            font-weight: 900;
-            padding: 5px 16px;
-            border-radius: 50px;
-            font-size: 1.05rem;
-        }
+        .pack-list .price { color: var(--secondary); font-weight: 900; }
 
         /* ABOUT */
         .stats-bar {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 20px;
-            background: linear-gradient(135deg, var(--secondary), #3E2723);
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 15px;
+            background: var(--secondary);
             border-radius: var(--radius);
-            padding: 40px 30px;
-            margin-bottom: 50px;
+            padding: 35px 25px;
+            margin-bottom: 45px;
             text-align: center;
         }
-        .stat-num {
-            font-family: 'Fredoka One', cursive;
-            font-size: 3rem;
-            color: var(--primary);
-            line-height: 1;
-        }
-        .stat-label { color: #f5e6d0; font-size: 0.88rem; font-weight: 700; margin-top: 5px; }
+        .stat-num { font-size: 2.8rem; font-weight: 900; color: var(--primary); line-height: 1; }
+        .stat-label { color: #f5e6d0; font-size: 0.85rem; font-weight: 600; margin-top: 5px; }
 
         .content-split {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 50px;
             align-items: center;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
         }
-        .text-block h2 { font-size: 2.6rem; color: var(--secondary); margin-bottom: 18px; }
-        .text-block p  { color: #555; font-size: 1.03rem; margin-bottom: 12px; line-height: 1.8; }
+        .text-block h2 { font-size: 2.4rem; font-weight: 900; color: var(--secondary); margin-bottom: 18px; }
+        .text-block p { color: #555; font-size: 1.02rem; margin-bottom: 12px; line-height: 1.8; }
         .address-box {
             background: white;
-            padding: 16px 20px;
-            border-left: 5px solid var(--primary);
-            border-radius: 0 12px 12px 0;
+            padding: 14px 18px;
+            border-left: 4px solid var(--primary);
+            border-radius: 0 10px 10px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
             margin-top: 15px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.07);
         }
         .address-box p { margin-bottom: 5px; font-size: 1rem; color: #333; }
         .img-block img { border-radius: var(--radius); box-shadow: var(--shadow); width: 100%; }
 
         .bio-container {
             background: white;
-            padding: 40px;
+            padding: 38px;
             border-radius: var(--radius);
             box-shadow: var(--shadow);
             display: flex;
             align-items: center;
-            gap: 40px;
+            gap: 38px;
         }
         .bio-img {
-            width: 270px; height: 270px;
+            width: 280px; height: 280px;
             object-fit: cover;
             border-radius: var(--radius);
             border: 5px solid var(--primary);
             flex-shrink: 0;
         }
-        .bio-text h3 { font-size: 2rem; color: var(--secondary); margin-bottom: 14px; }
-        .bio-text p  { font-size: 1rem; color: #555; margin-bottom: 12px; line-height: 1.8; }
+        .bio-text h3 { font-size: 1.9rem; font-weight: 900; color: var(--secondary); margin-bottom: 14px; }
+        .bio-text p { font-size: 1rem; color: #555; margin-bottom: 12px; line-height: 1.8; }
 
         /* EVENTS */
         .event-box {
             background: white;
-            padding: 40px;
+            padding: 38px;
             border-radius: var(--radius);
             box-shadow: var(--shadow);
-            margin-bottom: 30px;
-            position: relative;
-            overflow: hidden;
-            transition: transform 0.3s;
+            margin-bottom: 28px;
+            border-left: 5px solid var(--primary);
+            transition: transform 0.25s ease;
         }
-        .event-box:hover { transform: translateY(-5px); }
-        .event-box::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 6px;
-            background: linear-gradient(90deg, var(--primary), var(--fun));
-        }
-        .event-box h2 { font-size: 2rem; color: var(--secondary); margin-bottom: 14px; }
-        .event-box p  { color: #555; font-size: 1.03rem; line-height: 1.8; margin-bottom: 10px; }
+        .event-box:hover { transform: translateY(-4px); }
+        .event-box h2 { font-size: 1.9rem; font-weight: 900; color: var(--secondary); margin-bottom: 14px; }
+        .event-box p { color: #555; font-size: 1.02rem; line-height: 1.8; margin-bottom: 10px; }
 
         /* CALL ORDER */
-        .call-wrap {
+        .call-instructions {
             background: white;
-            padding: 50px 40px;
+            padding: 45px 38px;
             border-radius: var(--radius);
             text-align: center;
             box-shadow: var(--shadow);
-            max-width: 680px;
+            max-width: 700px;
             margin: 0 auto;
         }
-        .call-wrap h2 { font-size: 2.8rem; color: var(--secondary); margin-bottom: 10px; }
-        .call-wrap h3 { font-size: 1.8rem; color: var(--primary-dark); margin-bottom: 14px; }
-        .call-wrap > p { font-size: 1.05rem; color: #555; }
-        .call-steps {
-            background: #FFFDF5;
-            padding: 25px;
-            border-radius: 15px;
+        .call-instructions h2 { font-size: 2.4rem; font-weight: 900; color: var(--secondary); margin-bottom: 10px; }
+        .call-instructions h3 { font-size: 1.6rem; font-weight: 700; color: var(--primary-dark); margin-bottom: 14px; }
+        .call-step-box {
+            background: #f9f9f9;
+            padding: 22px;
+            border-radius: 10px;
             text-align: left;
-            margin: 25px 0;
-            border: 2px solid #f0e8d8;
+            margin: 22px 0;
         }
-        .call-steps h4 {
-            font-family: 'Fredoka One', cursive;
-            font-size: 1.2rem;
+        .call-step-box h4 {
             color: var(--secondary);
+            font-size: 1.05rem;
+            font-weight: 800;
             border-bottom: 2px solid var(--primary);
             padding-bottom: 8px;
             margin-bottom: 14px;
         }
-        .call-steps ol { padding-left: 20px; }
-        .call-steps li { margin-bottom: 11px; font-size: 1.03rem; color: #444; }
+        .call-step-box ol { padding-left: 20px; }
+        .call-step-box li { margin-bottom: 11px; font-size: 1.02rem; color: #444; }
         .cindy-btn {
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            font-size: 1.35rem;
-            padding: 20px 48px;
-            border-radius: 50px;
-            background: linear-gradient(135deg, var(--accent), #1B5E20);
+            font-size: 1.3rem;
+            padding: 18px 44px;
+            border-radius: 5px;
+            background: var(--accent);
             color: white;
             text-decoration: none;
-            font-weight: 900;
-            font-family: 'Nunito', sans-serif;
-            transition: transform 0.25s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.25s;
-            animation: pulse-green 2.5s ease infinite;
+            font-weight: 700;
+            font-family: inherit;
+            transition: transform 0.2s ease, box-shadow 0.2s;
         }
-        .cindy-btn:hover {
-            transform: scale(1.06) translateY(-3px);
-            box-shadow: 0 10px 30px rgba(56,142,60,0.5);
-            animation: none;
-        }
-        @keyframes pulse-green {
-            0%,100% { box-shadow: 0 0 0 0 rgba(56,142,60,0.4); }
-            50%      { box-shadow: 0 0 0 12px rgba(56,142,60,0); }
-        }
+        .cindy-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(46,125,50,0.4); }
 
         /* FOOTER */
         footer {
-            background: linear-gradient(135deg, #1a1a1a, #2c2c2c);
+            background-color: #222;
             color: white;
             padding: 60px 20px 30px;
             margin-top: auto;
@@ -706,17 +627,17 @@
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 38px;
         }
-        .footer-col h4 { font-family: 'Fredoka One', cursive; color: var(--primary); font-size: 1.4rem; margin-bottom: 16px; }
-        .footer-col p   { color: #bbb; margin-bottom: 7px; font-size: 0.93rem; }
-        .footer-col a   { color: white; text-decoration: none; transition: color 0.2s; }
+        .footer-col h4 { color: var(--primary); margin-bottom: 18px; font-size: 1.3rem; font-weight: 800; }
+        .footer-col p { color: #ccc; margin-bottom: 8px; font-size: 0.92rem; }
+        .footer-col a { color: white; text-decoration: none; transition: color 0.2s; }
         .footer-col a:hover { color: var(--primary); }
         .footer-bottom {
             text-align: center;
-            margin-top: 40px;
-            padding-top: 20px;
+            margin-top: 38px;
+            padding-top: 18px;
             border-top: 1px solid #333;
             color: #666;
             font-size: 0.88rem;
@@ -728,7 +649,7 @@
             position: fixed;
             top: 0; left: 0;
             width: 100%; height: 100%;
-            background: rgba(0,0,0,0.78);
+            background: rgba(0,0,0,0.72);
             z-index: 9999;
             align-items: center;
             justify-content: center;
@@ -736,99 +657,67 @@
         .surprise-overlay.show { display: flex; }
         .surprise-modal {
             background: white;
-            border-radius: 25px;
-            padding: 40px 35px;
-            max-width: 420px;
+            border-radius: var(--radius);
+            padding: 38px 32px;
+            max-width: 400px;
             width: 90%;
             text-align: center;
             position: relative;
-            animation: pop-in 0.5s cubic-bezier(0.34,1.56,0.64,1);
+            border-top: 5px solid var(--primary);
+            animation: modal-pop 0.35s ease;
         }
-        @keyframes pop-in {
-            from { opacity: 0; transform: scale(0.4) rotate(-6deg); }
-            to   { opacity: 1; transform: scale(1) rotate(0); }
+        @keyframes modal-pop {
+            from { opacity: 0; transform: scale(0.88) translateY(16px); }
+            to   { opacity: 1; transform: scale(1) translateY(0); }
         }
         .modal-close {
             position: absolute;
-            top: 14px; right: 18px;
-            font-size: 1.4rem;
+            top: 12px; right: 16px;
+            font-size: 1.3rem;
             cursor: pointer;
             background: none;
             border: none;
             color: #aaa;
-            font-family: 'Nunito', sans-serif;
             line-height: 1;
         }
         .modal-close:hover { color: #555; }
-        .surprise-modal h2  { color: var(--secondary); font-size: 1.4rem; margin-bottom: 5px; }
-        .surprise-emoji {
-            font-size: 4rem;
-            display: block;
-            margin: 12px 0;
-            animation: spin-pop 0.5s cubic-bezier(0.34,1.56,0.64,1);
-        }
-        @keyframes spin-pop {
-            from { transform: rotate(-360deg) scale(0); }
-            to   { transform: rotate(0) scale(1); }
-        }
-        .surprise-name  { font-family: 'Fredoka One', cursive; font-size: 2rem; color: var(--fun); margin-bottom: 6px; }
-        .surprise-price { font-size: 1.25rem; font-weight: 900; color: var(--secondary); margin-bottom: 10px; }
-        .surprise-desc  { color: #666; font-size: 0.93rem; margin-bottom: 20px; line-height: 1.6; }
+        .surprise-modal h2 { color: var(--secondary); font-size: 1.3rem; font-weight: 700; margin-bottom: 8px; }
+        .surprise-emoji { font-size: 3.5rem; display: block; margin: 10px 0; }
+        .surprise-name  { font-size: 1.8rem; font-weight: 900; color: var(--secondary); margin-bottom: 6px; }
+        .surprise-price { font-size: 1.2rem; font-weight: 800; color: var(--primary-dark); margin-bottom: 10px; }
+        .surprise-desc  { color: #666; font-size: 0.9rem; margin-bottom: 20px; line-height: 1.6; }
         .again-btn {
-            background: linear-gradient(135deg, #FF6B35, #FF3CAC);
+            background: var(--secondary);
             color: white;
             border: none;
-            padding: 12px 28px;
-            border-radius: 50px;
-            font-size: 1rem;
-            font-weight: 800;
+            padding: 11px 24px;
+            border-radius: 5px;
+            font-size: 0.95rem;
+            font-weight: 700;
             cursor: pointer;
-            font-family: 'Nunito', sans-serif;
-            transition: transform 0.2s cubic-bezier(0.34,1.56,0.64,1);
+            font-family: inherit;
+            transition: background 0.2s, transform 0.2s ease;
         }
-        .again-btn:hover { transform: scale(1.06); }
-
-        /* CONFETTI */
-        .confetti-bit {
-            position: fixed;
-            pointer-events: none;
-            z-index: 10000;
-            animation: confetti-drop linear forwards;
-        }
-        @keyframes confetti-drop {
-            0%   { transform: translateY(-10px) rotate(0deg); opacity: 1; }
-            100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
-        }
+        .again-btn:hover { background: #4a3328; transform: translateY(-2px); }
 
         /* MOBILE */
         @media (max-width: 900px) {
             .hamburger { display: flex; }
             nav ul, .btn-group { display: none; }
             nav { flex-direction: column; align-items: flex-start; width: 100%; gap: 8px; }
-            nav.open ul {
-                display: flex;
-                flex-direction: column;
-                gap: 4px;
-                width: 100%;
-            }
-            nav.open .btn-group {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                padding-bottom: 10px;
-                width: 100%;
-            }
-            .hero h1 { font-size: 2.8rem; }
+            nav.open ul { display: flex; flex-direction: column; gap: 5px; width: 100%; }
+            nav.open .btn-group { display: flex; flex-wrap: wrap; justify-content: center; padding-bottom: 10px; width: 100%; }
+            .hero h1 { font-size: 2.5rem; }
             .hero p  { font-size: 1.2rem; }
             .content-split { grid-template-columns: 1fr; }
             .bio-container { flex-direction: column; text-align: center; }
-            .bio-img { width: 220px; height: 220px; }
-            .menu-item { height: 410px; }
+            .bio-img { width: 230px; height: 230px; }
+            .menu-item { height: 400px; }
         }
         @media (max-width: 500px) {
-            .hero h1 { font-size: 2.2rem; }
+            .hero h1 { font-size: 2rem; }
             .byo-tracker { flex-direction: column; gap: 8px; }
-            .call-wrap { padding: 35px 20px; }
+            .call-instructions { padding: 30px 18px; }
         }
     </style>
 </head>
@@ -839,14 +728,13 @@
 </div>
 
 <div class="banner">
-    🎉 WE ARE NOW OPEN! Come visit us at our new location: 702 E. Main St! 🎉
+    🍟 Fresh Cut. Beef Tallow. Fully Loaded. Fry Baskets Launch April 16th!
 </div>
 
 <header>
     <div class="header-container">
         <div class="logo" onclick="showPage('home')">
-            <img src="fork.png" alt="Spud Man Logo">
-            <div class="logo-text">SPUD<span>MAN</span></div>
+            <img src="spudmanlogo.png" alt="Spud Man Logo">
         </div>
         <button class="hamburger" id="hamburger" onclick="toggleNav()" aria-label="Toggle menu">
             <span></span><span></span><span></span>
@@ -869,350 +757,239 @@
 <!-- HOME -->
 <div id="home" class="page-section active-page">
     <div class="hero">
-        <div class="floating-potatoes" id="fp"></div>
-        <div class="hero-content">
-            <h1>Welcome to Spud Man 🥔</h1>
-            <p>Riverton's World Famous Loaded Potatoes</p>
-            <div class="hero-actions">
-                <button class="hero-btn btn-hero-menu" onclick="showPage('menu')">🍽️ View Full Menu</button>
-                <button class="hero-btn btn-hero-call" onclick="showPage('call-order')">📞 Call Order</button>
-                <button class="hero-btn btn-surprise" onclick="surpriseMe()">🎲 Surprise Me!</button>
-            </div>
+        <h1>Welcome to Spud Man</h1>
+        <p>Riverton's World Famous Loaded Potatoes</p>
+        <div class="hero-actions">
+            <button class="hero-btn btn-hero-menu" onclick="showPage('menu')">View Full Menu</button>
+            <button class="hero-btn btn-hero-call" onclick="showPage('call-order')">📞 Call Order</button>
+            <button class="hero-btn btn-surprise" onclick="surpriseMe()">🎲 Surprise Me!</button>
         </div>
     </div>
     <div class="home-inner">
         <div class="home-intro reveal">
             <h2>A Riverton Tradition</h2>
             <p>We take the humble baked potato and turn it into a gourmet feast. Whether you want it fully loaded, smothered in chili, or piled high with brisket, we have the perfect spud for you.</p>
-            <img src="logo.JPG" alt="Spud Man Mascot" class="mascot-bounce">
+            <img src="logo.JPG" alt="Spud Man Mascot" class="mascot-img">
         </div>
         <div class="feature-cards">
-            <div class="feature-card reveal">
-                <div class="icon">🥔</div>
-                <h3>15+ Loaded Spuds</h3>
-                <p>From The Cattleman to Tex Mex Supreme, every spud is a masterpiece.</p>
-            </div>
-            <div class="feature-card reveal" style="transition-delay:.1s">
-                <div class="icon">🤖</div>
-                <h3>AI Phone Ordering</h3>
-                <p>Meet Cindy, our AI assistant. Fast, accurate, and ready to take your order.</p>
-            </div>
-            <div class="feature-card reveal" style="transition-delay:.2s">
-                <div class="icon">🎉</div>
-                <h3>Catering & Events</h3>
-                <p>Weddings, parties, fundraisers — we bring the spuds to your celebration.</p>
-            </div>
-            <div class="feature-card reveal" style="transition-delay:.3s">
-                <div class="icon">👨‍🍳</div>
-                <h3>Le Cordon Bleu Chef</h3>
-                <p>Owner James Brady trained under James Beard Award winners including Emeril Lagasse.</p>
-            </div>
+            <div class="feature-card reveal"><div class="icon">🥔</div><h3>15+ Loaded Spuds</h3><p>From The Cattleman to Tex Mex Supreme, every spud is a masterpiece.</p></div>
+            <div class="feature-card reveal" style="transition-delay:.1s"><div class="icon">🤖</div><h3>AI Phone Ordering</h3><p>Meet Cindy, our AI assistant. Fast, accurate, and ready to take your order.</p></div>
+            <div class="feature-card reveal" style="transition-delay:.2s"><div class="icon">🎉</div><h3>Catering &amp; Events</h3><p>Weddings, parties, fundraisers — we bring the spuds to your celebration.</p></div>
+            <div class="feature-card reveal" style="transition-delay:.3s"><div class="icon">👨‍🍳</div><h3>Le Cordon Bleu Chef</h3><p>Owner James Brady trained under James Beard Award winners including Emeril Lagasse.</p></div>
         </div>
     </div>
 </div>
 
 <!-- CALL ORDER -->
 <div id="call-order" class="page-section">
-    <div class="call-wrap">
+    <div class="call-instructions">
         <h2>Phone Ordering</h2>
         <img src="logo.JPG" alt="Spud Man Mascot" style="height:110px;margin:15px auto;">
         <h3>Meet Cindy, our AI Ordering Assistant!</h3>
-        <p>Advanced AI available right now to take your call — speak naturally, just like with a person!</p>
-        <div class="call-steps">
+        <p style="font-size:1.02rem;color:#555;margin-top:10px;">To make your ordering experience faster and more accurate, we use an advanced AI assistant named <strong>Cindy</strong>. She is available to take your call right now!</p>
+        <div class="call-step-box">
             <h4>How to Order with Cindy:</h4>
             <ol>
-                <li>Click the <strong>"Call Cindy"</strong> button below (or dial 307-463-5870).</li>
-                <li>Cindy will greet you and ask what you'd like to order.</li>
-                <li>Speak naturally — ask about items, modifications, and specials.</li>
-                <li>Cindy will confirm your total and pickup time.</li>
+                <li>Click the <strong>&ldquo;Call Cindy&rdquo;</strong> button below (or dial 307-463-5870).</li>
+                <li>Cindy will greet you and ask what you would like to order.</li>
+                <li>Speak naturally! You can ask about menu items, modifications, and specials just like you would with a person.</li>
+                <li>Cindy will confirm your total price and pickup time.</li>
             </ol>
         </div>
         <a href="tel:3074635870" class="cindy-btn">📞 Click Here to Call Cindy</a>
-        <p style="margin-top:14px;font-size:0.9rem;color:#999;">(307-463-5870)</p>
+        <p style="margin-top:14px;font-size:0.88rem;color:#999;">(307-463-5870)</p>
     </div>
 </div>
 
 <!-- MENU -->
 <div id="menu" class="page-section">
-    <div class="section-heading reveal">
-        <h1>Our Menu 🥔</h1>
-    </div>
-    <p style="text-align:center;color:#aaa;margin-top:-38px;margin-bottom:35px;font-size:0.88rem;">Hover or tap any card to see what's inside!</p>
+    <h1 style="text-align:center;margin-bottom:8px;color:var(--secondary);font-weight:900;font-size:2.8rem;">Our Menu</h1>
+    <p style="text-align:center;color:#aaa;font-size:0.85rem;margin-bottom:40px;font-style:italic;">Hover or tap any item to see what&rsquo;s inside.</p>
 
     <!-- LOADED SPUDS -->
     <div class="menu-category reveal">
-        <h2>🥔 Famous Loaded Spuds</h2>
+        <h2>Famous Loaded Spuds</h2>
         <div class="menu-grid">
 
             <div class="menu-item" onclick="this.classList.toggle('flipped')">
                 <div class="menu-item-inner">
-                    <div class="menu-front">
-                        <span class="bestseller">⭐ #1 Seller</span>
+                    <div class="menu-front"><span class="bestseller-badge">#1 Seller</span>
                         <img src="cattleman.jpg" alt="The Cattleman" class="menu-front-img">
-                        <div class="menu-front-details">
-                            <div class="menu-front-name">The Cattleman</div>
-                            <span class="price-badge">$15.00</span>
-                            <div class="flip-hint">Hover or tap to flip 🔄</div>
-                        </div>
+                        <div class="menu-front-details"><div><div class="menu-front-name">The Cattleman</div><span class="price-tag">$15.00</span></div><div class="flip-hint">Hover or tap to flip &crarr;</div></div>
                     </div>
-                    <div class="menu-back">
-                        <h4>The Cattleman</h4>
-                        <p>Butter, Tender Beef Steak, Cheddar Jack, Ranch Drizzle, Crispy Onions.</p>
-                        <div class="back-price">$15.00</div>
-                        <div class="back-yum">⭐ Our #1 Best Seller!</div>
-                    </div>
+                    <div class="menu-back"><h4>The Cattleman</h4><p>Butter, Tender Beef Steak, Cheddar Jack, Ranch Drizzle, Crispy Onions.</p><div class="back-price">$15.00</div><div class="back-note">⭐ Our #1 Best Seller</div></div>
                 </div>
             </div>
 
             <div class="menu-item" onclick="this.classList.toggle('flipped')">
                 <div class="menu-item-inner">
-                    <div class="menu-front">
-                        <img src="full.jpg" alt="Fully Loaded Spud" class="menu-front-img">
-                        <div class="menu-front-details">
-                            <div class="menu-front-name">The Fully Loaded Spud</div>
-                            <span class="price-badge">$11.00</span>
-                            <div class="flip-hint">Hover or tap to flip 🔄</div>
-                        </div>
+                    <div class="menu-front"><img src="full.jpg" alt="Fully Loaded Spud" class="menu-front-img">
+                        <div class="menu-front-details"><div><div class="menu-front-name">The Fully Loaded Spud</div><span class="price-tag">$11.00</span></div><div class="flip-hint">Hover or tap to flip &crarr;</div></div>
                     </div>
-                    <div class="menu-back">
-                        <h4>The Fully Loaded Spud</h4>
-                        <p>Butter, Cheddar Jack, Bacon, Sour Cream, Green Onions.</p>
-                        <div class="back-price">$11.00</div>
-                    </div>
+                    <div class="menu-back"><h4>The Fully Loaded Spud</h4><p>Butter, Cheddar Jack, Bacon, Sour Cream, Green Onions.</p><div class="back-price">$11.00</div></div>
                 </div>
             </div>
 
             <div class="menu-item" onclick="this.classList.toggle('flipped')">
                 <div class="menu-item-inner">
-                    <div class="menu-front">
-                        <img src="brisketcheese.jpg" alt="Brisket Cheese" class="menu-front-img">
-                        <div class="menu-front-details">
-                            <div class="menu-front-name">Brisket Cheese</div>
-                            <span class="price-badge">$15.00</span>
-                            <div class="flip-hint">Hover or tap to flip 🔄</div>
-                        </div>
+                    <div class="menu-front"><img src="brisketcheese.jpg" alt="Brisket Cheese" class="menu-front-img">
+                        <div class="menu-front-details"><div><div class="menu-front-name">Brisket Cheese</div><span class="price-tag">$15.00</span></div><div class="flip-hint">Hover or tap to flip &crarr;</div></div>
                     </div>
-                    <div class="menu-back">
-                        <h4>Brisket Cheese</h4>
-                        <p>Butter, Cheddar Jack, Chopped Brisket, BBQ Sauce.</p>
-                        <div class="back-price">$15.00</div>
-                    </div>
+                    <div class="menu-back"><h4>Brisket Cheese</h4><p>Butter, Cheddar Jack, Chopped Brisket, BBQ Sauce.</p><div class="back-price">$15.00</div></div>
                 </div>
             </div>
 
             <div class="menu-item" onclick="this.classList.toggle('flipped')">
                 <div class="menu-item-inner">
-                    <div class="menu-front">
-                        <img src="smokehouse.jpg" alt="Smokehouse Stack" class="menu-front-img">
-                        <div class="menu-front-details">
-                            <div class="menu-front-name">Smokehouse Stack</div>
-                            <span class="price-badge">$14.50</span>
-                            <div class="flip-hint">Hover or tap to flip 🔄</div>
-                        </div>
+                    <div class="menu-front"><img src="smokehouse.jpg" alt="Smokehouse Stack" class="menu-front-img">
+                        <div class="menu-front-details"><div><div class="menu-front-name">Smokehouse Stack</div><span class="price-tag">$14.50</span></div><div class="flip-hint">Hover or tap to flip &crarr;</div></div>
                     </div>
-                    <div class="menu-back">
-                        <h4>Smokehouse Stack</h4>
-                        <p>Butter, Brisket, Cheddar Jack, Baked Beans, Ranch Drizzle, Bacon, Crispy Onions.</p>
-                        <div class="back-price">$14.50</div>
-                    </div>
+                    <div class="menu-back"><h4>Smokehouse Stack</h4><p>Butter, Brisket, Cheddar Jack, Baked Beans, Ranch Drizzle, Bacon, Crispy Onions.</p><div class="back-price">$14.50</div></div>
                 </div>
             </div>
 
             <div class="menu-item" onclick="this.classList.toggle('flipped')">
                 <div class="menu-item-inner">
-                    <div class="menu-front">
-                        <img src="texmex.jpg" alt="Tex Mex Supreme" class="menu-front-img">
-                        <div class="menu-front-details">
-                            <div class="menu-front-name">Tex Mex Supreme</div>
-                            <span class="price-badge">$13.25</span>
-                            <div class="flip-hint">Hover or tap to flip 🔄</div>
-                        </div>
+                    <div class="menu-front"><img src="texmex.jpg" alt="Tex Mex Supreme" class="menu-front-img">
+                        <div class="menu-front-details"><div><div class="menu-front-name">Tex Mex Supreme</div><span class="price-tag">$13.25</span></div><div class="flip-hint">Hover or tap to flip &crarr;</div></div>
                     </div>
-                    <div class="menu-back">
-                        <h4>Tex Mex Supreme</h4>
-                        <p>Butter, Taco Beef, Jalapenos, Nacho Cheese, Cheddar Jack, Sour Cream, Crispy Onions.</p>
-                        <div class="back-price">$13.25</div>
-                    </div>
+                    <div class="menu-back"><h4>Tex Mex Supreme</h4><p>Butter, Taco Beef, Jalapenos, Nacho Cheese, Cheddar Jack, Sour Cream, Crispy Onions.</p><div class="back-price">$13.25</div></div>
                 </div>
             </div>
 
             <div class="menu-item" onclick="this.classList.toggle('flipped')">
                 <div class="menu-item-inner">
-                    <div class="menu-front">
-                        <img src="chili.jpg" alt="Chili Cheese Spud" class="menu-front-img">
-                        <div class="menu-front-details">
-                            <div class="menu-front-name">Chili Cheese Spud</div>
-                            <span class="price-badge">$12.25</span>
-                            <div class="flip-hint">Hover or tap to flip 🔄</div>
-                        </div>
+                    <div class="menu-front"><img src="chili.jpg" alt="Chili Cheese Spud" class="menu-front-img">
+                        <div class="menu-front-details"><div><div class="menu-front-name">Chili Cheese Spud</div><span class="price-tag">$12.25</span></div><div class="flip-hint">Hover or tap to flip &crarr;</div></div>
                     </div>
-                    <div class="menu-back">
-                        <h4>Chili Cheese Spud</h4>
-                        <p>Butter, Cowboy Chili, Cheddar Jack, Nacho Cheese, Sour Cream, Diced Onions.</p>
-                        <div class="back-price">$12.25</div>
-                    </div>
+                    <div class="menu-back"><h4>Chili Cheese Spud</h4><p>Butter, Cowboy Chili, Cheddar Jack, Nacho Cheese, Sour Cream, Diced Onions.</p><div class="back-price">$12.25</div></div>
                 </div>
             </div>
 
             <div class="menu-item" onclick="this.classList.toggle('flipped')">
                 <div class="menu-item-inner">
-                    <div class="menu-front">
-                        <img src="broccoli.jpg" alt="Broccoli Bacon Cheese" class="menu-front-img">
-                        <div class="menu-front-details">
-                            <div class="menu-front-name">Broccoli Bacon Cheese</div>
-                            <span class="price-badge">$13.25</span>
-                            <div class="flip-hint">Hover or tap to flip 🔄</div>
-                        </div>
+                    <div class="menu-front"><img src="broccoli.jpg" alt="Broccoli Bacon Cheese" class="menu-front-img">
+                        <div class="menu-front-details"><div><div class="menu-front-name">Broccoli Bacon Cheese Spud</div><span class="price-tag">$13.25</span></div><div class="flip-hint">Hover or tap to flip &crarr;</div></div>
                     </div>
-                    <div class="menu-back">
-                        <h4>Broccoli Bacon Cheese</h4>
-                        <p>Butter, Broccoli, Cheddar Jack, Nacho Cheese, Bacon.</p>
-                        <div class="back-price">$13.25</div>
-                    </div>
+                    <div class="menu-back"><h4>Broccoli Bacon Cheese</h4><p>Butter, Broccoli, Cheddar Jack, Nacho Cheese, Bacon.</p><div class="back-price">$13.25</div></div>
                 </div>
             </div>
 
             <div class="menu-item" onclick="this.classList.toggle('flipped')">
                 <div class="menu-item-inner">
-                    <div class="menu-front">
-                        <img src="buffaloranchchicken.jpg" alt="Buffalo Ranch Chicken" class="menu-front-img">
-                        <div class="menu-front-details">
-                            <div class="menu-front-name">Buffalo Ranch Chicken</div>
-                            <span class="price-badge">$12.75</span>
-                            <div class="flip-hint">Hover or tap to flip 🔄</div>
-                        </div>
+                    <div class="menu-front"><img src="buffaloranchchicken.jpg" alt="Buffalo Ranch Chicken" class="menu-front-img">
+                        <div class="menu-front-details"><div><div class="menu-front-name">Buffalo Ranch Chicken</div><span class="price-tag">$12.75</span></div><div class="flip-hint">Hover or tap to flip &crarr;</div></div>
                     </div>
-                    <div class="menu-back">
-                        <h4>Buffalo Ranch Chicken</h4>
-                        <p>Butter, Buffalo Chicken, Ranch Drizzle, Cheddar Jack, Nacho Cheese, Green Onions.</p>
-                        <div class="back-price">$12.75</div>
-                    </div>
+                    <div class="menu-back"><h4>Buffalo Ranch Chicken</h4><p>Butter, Buffalo Chicken, Ranch Drizzle, Cheddar Jack, Nacho Cheese, Green Onions.</p><div class="back-price">$12.75</div></div>
                 </div>
             </div>
 
             <div class="menu-item" onclick="this.classList.toggle('flipped')">
                 <div class="menu-item-inner">
-                    <div class="menu-front">
-                        <img src="potroastspud.jpg" alt="Pot Roast Beef Spud" class="menu-front-img">
-                        <div class="menu-front-details">
-                            <div class="menu-front-name">Pot Roast Beef Spud</div>
-                            <span class="price-badge">$14.00</span>
-                            <div class="flip-hint">Hover or tap to flip 🔄</div>
-                        </div>
+                    <div class="menu-front"><img src="potroastspud.jpg" alt="Pot Roast Beef Spud" class="menu-front-img">
+                        <div class="menu-front-details"><div><div class="menu-front-name">Pot Roast Beef Spud</div><span class="price-tag">$14.00</span></div><div class="flip-hint">Hover or tap to flip &crarr;</div></div>
                     </div>
-                    <div class="menu-back">
-                        <h4>Pot Roast Beef Spud</h4>
-                        <p>Butter, Cheddar Jack, Tender Pot Roast, Roasted Vegetables, Brown Gravy, Crispy Onions.</p>
-                        <div class="back-price">$14.00</div>
-                    </div>
+                    <div class="menu-back"><h4>Pot Roast Beef Spud</h4><p>Butter, Cheddar Jack, Tender Pot Roast, Roasted Vegetables, Brown Gravy, Crispy Onions.</p><div class="back-price">$14.00</div></div>
                 </div>
             </div>
 
             <div class="menu-item" onclick="this.classList.toggle('flipped')">
                 <div class="menu-item-inner">
-                    <div class="menu-front">
-                        <img src="hogheaven.jpg" alt="Hog Heaven" class="menu-front-img">
-                        <div class="menu-front-details">
-                            <div class="menu-front-name">Hog Heaven</div>
-                            <span class="price-badge">$15.00</span>
-                            <div class="flip-hint">Hover or tap to flip 🔄</div>
-                        </div>
+                    <div class="menu-front"><img src="hogheaven.jpg" alt="Hog Heaven" class="menu-front-img">
+                        <div class="menu-front-details"><div><div class="menu-front-name">Hog Heaven</div><span class="price-tag">$15.00</span></div><div class="flip-hint">Hover or tap to flip &crarr;</div></div>
                     </div>
-                    <div class="menu-back">
-                        <h4>Hog Heaven</h4>
-                        <p>Butter, Pulled Pork, Cheddar Jack, Bacon, Sour Cream, BBQ Sauce, Coleslaw.</p>
-                        <div class="back-price">$15.00</div>
-                    </div>
+                    <div class="menu-back"><h4>Hog Heaven</h4><p>Butter, Pulled Pork, Cheddar Jack, Bacon, Sour Cream, BBQ Sauce, Coleslaw.</p><div class="back-price">$15.00</div></div>
                 </div>
             </div>
 
             <div class="menu-item" onclick="this.classList.toggle('flipped')">
                 <div class="menu-item-inner">
-                    <div class="menu-front">
-                        <img src="porkgreenchili.jpg" alt="Pork Green Chili Spud" class="menu-front-img">
-                        <div class="menu-front-details">
-                            <div class="menu-front-name">Pork Green Chili Spud</div>
-                            <span class="price-badge">$13.25</span>
-                            <div class="flip-hint">Hover or tap to flip 🔄</div>
-                        </div>
+                    <div class="menu-front"><img src="porkgreenchili.jpg" alt="Pork Green Chili Spud" class="menu-front-img">
+                        <div class="menu-front-details"><div><div class="menu-front-name">Pork Green Chili Spud</div><span class="price-tag">$13.25</span></div><div class="flip-hint">Hover or tap to flip &crarr;</div></div>
                     </div>
-                    <div class="menu-back">
-                        <h4>Pork Green Chili Spud</h4>
-                        <p>Pork Green Chili, Butter, Cheddar Jack, Sour Cream, Green Onion.</p>
-                        <div class="back-price">$13.25</div>
-                    </div>
+                    <div class="menu-back"><h4>Pork Green Chili Spud</h4><p>Pork Green Chili, Butter, Cheddar Jack, Sour Cream, Green Onion.</p><div class="back-price">$13.25</div></div>
                 </div>
             </div>
 
             <div class="menu-item" onclick="this.classList.toggle('flipped')">
                 <div class="menu-item-inner">
-                    <div class="menu-front">
-                        <img src="bbqchicken.jpg" alt="BBQ Chicken Delight" class="menu-front-img">
-                        <div class="menu-front-details">
-                            <div class="menu-front-name">BBQ Chicken Delight</div>
-                            <span class="price-badge">$12.25</span>
-                            <div class="flip-hint">Hover or tap to flip 🔄</div>
-                        </div>
+                    <div class="menu-front"><img src="reubenspud.jpg" alt="Riverton Reuben" class="menu-front-img">
+                        <div class="menu-front-details"><div><div class="menu-front-name">Riverton Reuben</div><span class="price-tag">$14.00</span></div><div class="flip-hint">Hover or tap to flip &crarr;</div></div>
                     </div>
-                    <div class="menu-back">
-                        <h4>BBQ Chicken Delight</h4>
-                        <p>Butter, Cheddar Jack, Cheese Sauce, BBQ Chicken, BBQ Sauce, Green Onion.</p>
-                        <div class="back-price">$12.25</div>
-                    </div>
+                    <div class="menu-back"><h4>Riverton Reuben</h4><p>Butter, Swiss Cheese, Corned Beef, Tangy Sauerkraut, House-made 1000 Island.</p><div class="back-price">$14.00</div></div>
                 </div>
             </div>
 
             <div class="menu-item" onclick="this.classList.toggle('flipped')">
                 <div class="menu-item-inner">
-                    <div class="menu-front">
-                        <img src="reubenspud.jpg" alt="Riverton Reuben" class="menu-front-img">
-                        <div class="menu-front-details">
-                            <div class="menu-front-name">Riverton Reuben</div>
-                            <span class="price-badge">$14.00</span>
-                            <div class="flip-hint">Hover or tap to flip 🔄</div>
-                        </div>
+                    <div class="menu-front"><img src="philly.jpg" alt="The Philly Cheese" class="menu-front-img">
+                        <div class="menu-front-details"><div><div class="menu-front-name">The Philly Cheese</div><span class="price-tag">$14.00</span></div><div class="flip-hint">Hover or tap to flip &crarr;</div></div>
                     </div>
-                    <div class="menu-back">
-                        <h4>Riverton Reuben</h4>
-                        <p>Butter, Swiss Cheese, Corned Beef, Tangy Sauerkraut, House-made 1000 Island.</p>
-                        <div class="back-price">$14.00</div>
-                    </div>
+                    <div class="menu-back"><h4>The Philly Cheese</h4><p>Butter, Shredded Cheese, Cheese Sauce, Sliced Roast Beef, Mushroom, Peppers, Onion.</p><div class="back-price">$14.00</div></div>
                 </div>
             </div>
 
             <div class="menu-item" onclick="this.classList.toggle('flipped')">
                 <div class="menu-item-inner">
-                    <div class="menu-front">
-                        <img src="philly.jpg" alt="The Philly Cheese" class="menu-front-img">
-                        <div class="menu-front-details">
-                            <div class="menu-front-name">The Philly Cheese</div>
-                            <span class="price-badge">$14.00</span>
-                            <div class="flip-hint">Hover or tap to flip 🔄</div>
-                        </div>
+                    <div class="menu-front"><div class="menu-front-no-img">🧀</div>
+                        <div class="menu-front-details"><div><div class="menu-front-name">Chili Mac &amp; Cheese Spud</div><span class="price-tag">$14.00</span></div><div class="flip-hint">Hover or tap to flip &crarr;</div></div>
                     </div>
-                    <div class="menu-back">
-                        <h4>The Philly Cheese</h4>
-                        <p>Butter, Shredded Cheese, Cheese Sauce, Sliced Roast Beef, Mushroom, Peppers, Onion.</p>
-                        <div class="back-price">$14.00</div>
+                    <div class="menu-back"><h4>Chili Mac &amp; Cheese Spud</h4><p>Butter, Cheddar Jack, Cheese Sauce, Cowboy Chili, Mac &amp; Cheese, Sour Cream.</p><div class="back-price">$14.00</div></div>
+                </div>
+            </div>
+
+        </div>
+        <div class="fry-callout">🍟 <strong>Make it a Fry Basket &mdash; No Charge.</strong> Substitute hand-cut beef tallow fries on any spud build.</div>
+    </div>
+
+    <!-- LOADED FRY BASKETS -->
+    <div class="menu-category reveal">
+        <h2>Loaded Fry Baskets</h2>
+        <p style="color:#555;font-size:1.02rem;margin-bottom:22px;">Hand-cut fries fried in beef tallow, seasoned with our signature Cowboy Dust, and loaded just like our famous spuds. Launching April 16th.</p>
+        <div class="menu-grid">
+
+            <div class="menu-item" onclick="this.classList.toggle('flipped')">
+                <div class="menu-item-inner">
+                    <div class="menu-front"><img src="brisketcheese.jpg" alt="The Rustler" class="menu-front-img">
+                        <div class="menu-front-details"><div><div class="menu-front-name">The Rustler</div><span class="price-tag">$15.00</span></div><div class="flip-hint">Hover or tap to flip &crarr;</div></div>
                     </div>
+                    <div class="menu-back"><h4>The Rustler</h4><p>Hand-cut fries loaded with slow-smoked brisket, cheese sauce, shredded cheddar jack, and bold BBQ sauce.</p><div class="back-price">$15.00</div></div>
                 </div>
             </div>
 
             <div class="menu-item" onclick="this.classList.toggle('flipped')">
                 <div class="menu-item-inner">
-                    <div class="menu-front">
-                        <div class="menu-front-no-img">🧀</div>
-                        <div class="menu-front-details">
-                            <div class="menu-front-name">Chili Mac &amp; Cheese Spud</div>
-                            <span class="price-badge">$14.00</span>
-                            <div class="flip-hint">Hover or tap to flip 🔄</div>
-                        </div>
+                    <div class="menu-front"><img src="chili.jpg" alt="The Trail Boss" class="menu-front-img">
+                        <div class="menu-front-details"><div><div class="menu-front-name">The Trail Boss</div><span class="price-tag">$12.25</span></div><div class="flip-hint">Hover or tap to flip &crarr;</div></div>
                     </div>
-                    <div class="menu-back">
-                        <h4>Chili Mac &amp; Cheese Spud</h4>
-                        <p>Butter, Cheddar Jack, Cheese Sauce, Cowboy Chili, Mac &amp; Cheese, Sour Cream.</p>
-                        <div class="back-price">$14.00</div>
+                    <div class="menu-back"><h4>The Trail Boss</h4><p>Hand-cut fries smothered in double cheese, hearty cowboy chili, and sour cream.</p><div class="back-price">$12.25</div></div>
+                </div>
+            </div>
+
+            <div class="menu-item" onclick="this.classList.toggle('flipped')">
+                <div class="menu-item-inner">
+                    <div class="menu-front"><img src="buffaloranchchicken.jpg" alt="The Maverick" class="menu-front-img">
+                        <div class="menu-front-details"><div><div class="menu-front-name">The Maverick</div><span class="price-tag">$12.75</span></div><div class="flip-hint">Hover or tap to flip &crarr;</div></div>
                     </div>
+                    <div class="menu-back"><h4>The Maverick</h4><p>Hand-cut fries topped with double cheese, crispy buffalo chicken, and a bold ranch drizzle.</p><div class="back-price">$12.75</div></div>
+                </div>
+            </div>
+
+            <div class="menu-item" onclick="this.classList.toggle('flipped')">
+                <div class="menu-item-inner">
+                    <div class="menu-front"><img src="texmex.jpg" alt="The Bandito" class="menu-front-img">
+                        <div class="menu-front-details"><div><div class="menu-front-name">The Bandito</div><span class="price-tag">$13.25</span></div><div class="flip-hint">Hover or tap to flip &crarr;</div></div>
+                    </div>
+                    <div class="menu-back"><h4>The Bandito</h4><p>Hand-cut fries loaded with double cheese, seasoned taco beef, jalapenos, and sour cream.</p><div class="back-price">$13.25</div></div>
+                </div>
+            </div>
+
+            <div class="menu-item" onclick="this.classList.toggle('flipped')">
+                <div class="menu-item-inner">
+                    <div class="menu-front"><img src="full.jpg" alt="The Wagonmaster" class="menu-front-img">
+                        <div class="menu-front-details"><div><div class="menu-front-name">The Wagonmaster</div><span class="price-tag">$11.00</span></div><div class="flip-hint">Hover or tap to flip &crarr;</div></div>
+                    </div>
+                    <div class="menu-back"><h4>The Wagonmaster</h4><p>Hand-cut fries smothered in double cheese, crispy bacon, sour cream, and fresh green onion.</p><div class="back-price">$11.00</div></div>
                 </div>
             </div>
 
@@ -1221,60 +998,33 @@
 
     <!-- APPETIZERS -->
     <div class="menu-category reveal">
-        <h2>🌮 Appetizers</h2>
+        <h2>Appetizers</h2>
         <div class="menu-grid">
 
             <div class="menu-item" onclick="this.classList.toggle('flipped')">
                 <div class="menu-item-inner">
-                    <div class="menu-front">
-                        <img src="nachomax.jpg" alt="Nacho Max" class="menu-front-img">
-                        <div class="menu-front-details">
-                            <div class="menu-front-name">Nacho Max</div>
-                            <span class="price-badge">$13.50</span>
-                            <div class="flip-hint">Hover or tap to flip 🔄</div>
-                        </div>
+                    <div class="menu-front"><img src="nachomax.jpg" alt="Nacho Max" class="menu-front-img">
+                        <div class="menu-front-details"><div><div class="menu-front-name">Nacho Max</div><span class="price-tag">$13.50</span></div><div class="flip-hint">Hover or tap to flip &crarr;</div></div>
                     </div>
-                    <div class="menu-back">
-                        <h4>Nacho Max</h4>
-                        <p>Tortilla Chips, Taco Beef, Cheese Sauces, Cheddar Jack, Jalapenos, Salsa, Sour Cream, Diced Tomato.</p>
-                        <div class="back-price">$13.50</div>
-                    </div>
+                    <div class="menu-back"><h4>Nacho Max</h4><p>Tortilla Chips, Taco Beef, Cheese Sauces, Cheddar Jack, Jalapenos, Salsa, Sour Cream, Diced Tomato.</p><div class="back-price">$13.50</div></div>
                 </div>
             </div>
 
             <div class="menu-item" onclick="this.classList.toggle('flipped')">
                 <div class="menu-item-inner">
-                    <div class="menu-front">
-                        <div class="menu-front-no-img">🧀</div>
-                        <div class="menu-front-details">
-                            <div class="menu-front-name">Cheesy Nachos</div>
-                            <span class="price-badge">$9.00</span>
-                            <div class="flip-hint">Hover or tap to flip 🔄</div>
-                        </div>
+                    <div class="menu-front"><div class="menu-front-no-img">🧀</div>
+                        <div class="menu-front-details"><div><div class="menu-front-name">Cheesy Nachos</div><span class="price-tag">$9.00</span></div><div class="flip-hint">Hover or tap to flip &crarr;</div></div>
                     </div>
-                    <div class="menu-back">
-                        <h4>Cheesy Nachos</h4>
-                        <p>Cheese Sauce, Shredded Cheese, Sour Cream.</p>
-                        <div class="back-price">$9.00</div>
-                    </div>
+                    <div class="menu-back"><h4>Cheesy Nachos</h4><p>Cheese Sauce, Shredded Cheese, Sour Cream.</p><div class="back-price">$9.00</div></div>
                 </div>
             </div>
 
             <div class="menu-item" onclick="this.classList.toggle('flipped')">
                 <div class="menu-item-inner">
-                    <div class="menu-front">
-                        <img src="fritopie.jpg" alt="Wyo Frito Pie" class="menu-front-img">
-                        <div class="menu-front-details">
-                            <div class="menu-front-name">Wyo Frito Pie</div>
-                            <span class="price-badge">$9.00</span>
-                            <div class="flip-hint">Hover or tap to flip 🔄</div>
-                        </div>
+                    <div class="menu-front"><img src="fritopie.jpg" alt="Wyo Frito Pie" class="menu-front-img">
+                        <div class="menu-front-details"><div><div class="menu-front-name">Wyo Frito Pie</div><span class="price-tag">$9.00</span></div><div class="flip-hint">Hover or tap to flip &crarr;</div></div>
                     </div>
-                    <div class="menu-back">
-                        <h4>Wyo Frito Pie</h4>
-                        <p>Fritos, Chili, Cheese, Sour Cream, Green Onion, Diced Tomato.</p>
-                        <div class="back-price">$9.00</div>
-                    </div>
+                    <div class="menu-back"><h4>Wyo Frito Pie</h4><p>Fritos, Chili, Cheese, Sour Cream, Green Onion, Diced Tomato.</p><div class="back-price">$9.00</div></div>
                 </div>
             </div>
 
@@ -1283,18 +1033,15 @@
 
     <!-- BUILD YOUR OWN SPUD -->
     <div class="menu-category reveal">
-        <h2>🛠️ Build Your Own Spud</h2>
-        <div class="byo-wrap">
-            <div class="byo-tracker spud-tracker">
+        <h2>Build Your Own Spud</h2>
+        <div class="byo-container">
+            <div class="byo-tracker">
                 <div class="tracker-base">🥔 Base Spud: $7.75</div>
-                <div>
-                    <div class="tracker-label">YOUR TOTAL</div>
-                    <div class="tracker-total" id="byo-total">$7.75</div>
-                </div>
+                <div><div class="tracker-label">Your Total</div><div class="tracker-total" id="byo-total">$7.75</div></div>
             </div>
-            <div class="byo-cols" id="byo-spud-form">
+            <div class="byo-columns" id="byo-spud-form">
                 <div class="byo-col">
-                    <h4>Standard Toppings ($.50 ea)</h4>
+                    <h4>Standard Toppings (.50 ea)</h4>
                     <ul>
                         <li><label><input type="checkbox" data-price="0.50" onchange="calcBYO()"> Butter</label></li>
                         <li><label><input type="checkbox" data-price="0.50" onchange="calcBYO()"> Shred Cheese</label></li>
@@ -1314,7 +1061,7 @@
                     </ul>
                 </div>
                 <div class="byo-col">
-                    <h4>Premium Toppings ($1.00 ea)</h4>
+                    <h4>Premium Toppings (1.00 ea)</h4>
                     <ul>
                         <li><label><input type="checkbox" data-price="1.00" onchange="calcBYO()"> Coleslaw</label></li>
                         <li><label><input type="checkbox" data-price="1.00" onchange="calcBYO()"> Baked Beans</label></li>
@@ -1342,61 +1089,69 @@
                 </div>
             </div>
         </div>
+        <div class="fry-callout">🍟 <strong>Make it a Fry Basket &mdash; No Charge.</strong> Substitute hand-cut beef tallow fries on any spud build.</div>
     </div>
 
-    <!-- BUILD A SALAD -->
+    <!-- SALAD BAR -->
     <div class="menu-category reveal">
-        <h2>🥗 Build A Salad</h2>
-        <div class="byo-wrap" style="border-top-color:var(--accent);">
-            <div class="byo-tracker salad-tracker">
-                <div class="tracker-base">🥗 Base Salad: Sm $4.75 / Lrg $6.50</div>
-                <div>
-                    <div class="tracker-label">YOUR TOTAL (Sm)</div>
-                    <div class="tracker-total" id="salad-total">$4.75</div>
-                </div>
-            </div>
-            <div class="byo-cols" id="byo-salad-form">
+        <h2>Salad Bar</h2>
+        <div class="coming-soon-card">
+            <div class="coming-soon-badge">Coming Soon</div>
+            <h3>All-You-Can-Eat Salad Bar</h3>
+            <p>Fresh ingredients, house-made dressings, and premium proteins &mdash; the Spud Man Salad Bar is coming soon. Build it your way, as many times as you like.</p>
+            <p class="coming-soon-sub">Stay tuned for the launch date. Follow us on Facebook for the announcement.</p>
+        </div>
+        <div class="byo-container">
+            <h3 style="text-align:center;color:var(--secondary);margin-bottom:4px;">Start with Crisp Iceberg Salad</h3>
+            <p style="text-align:center;font-weight:700;margin-bottom:3px;">Sm $4.75 / Lrg $6.50</p>
+            <p style="text-align:center;font-size:0.88rem;color:#888;margin-bottom:20px;">Salad Toppings 0.50 ea &bull; Dressing Included &bull; Premium Proteins: Half $2.50 / Full $3.50</p>
+            <div class="byo-columns">
                 <div class="byo-col">
-                    <h4>Salad Toppings ($.50 ea)</h4>
-                    <ul>
-                        <li><label><input type="checkbox" data-price="0.50" onchange="calcSalad()"> Shred Cheese</label></li>
-                        <li><label><input type="checkbox" data-price="0.50" onchange="calcSalad()"> Shred Swiss Cheese</label></li>
-                        <li><label><input type="checkbox" data-price="0.50" onchange="calcSalad()"> Diced Tomato</label></li>
-                        <li><label><input type="checkbox" data-price="0.50" onchange="calcSalad()"> Sliced Jalapenos</label></li>
-                        <li><label><input type="checkbox" data-price="0.50" onchange="calcSalad()"> Crushed Fritos</label></li>
-                        <li><label><input type="checkbox" data-price="0.50" onchange="calcSalad()"> Chopped Bacon</label></li>
-                        <li><label><input type="checkbox" data-price="0.50" onchange="calcSalad()"> Green Onion</label></li>
-                        <li><label><input type="checkbox" data-price="0.50" onchange="calcSalad()"> Diced White Onion</label></li>
-                        <li><label><input type="checkbox" data-price="0.50" onchange="calcSalad()"> Crispy Onions</label></li>
-                        <li><label><input type="checkbox" data-price="0.50" onchange="calcSalad()"> Mild Salsa</label></li>
-                        <li><label><input type="checkbox" data-price="0.50" onchange="calcSalad()"> Steamed Broccoli</label></li>
-                        <li><label><input type="checkbox" data-price="0.50" onchange="calcSalad()"> Garlic Mushrooms</label></li>
+                    <h4>Toppings</h4>
+                    <ul class="simple-list">
+                        <li>Shredded Cheese</li><li>Shred Swiss Cheese</li><li>Diced Tomato</li><li>Sliced Jalapenos</li>
+                        <li>Crushed Fritos</li><li>Chopped Bacon</li><li>Green Onion</li><li>Diced White Onion</li>
+                        <li>Crispy Onions</li><li>Pickled Red Onion</li><li>Shredded Carrot</li><li>Sliced Black Olives</li>
+                        <li>Sunflower Seeds</li><li>Steamed Broccoli</li><li>Garlic Mushrooms</li><li>Hard Boiled Egg</li><li>Mild Salsa</li>
                     </ul>
                 </div>
                 <div class="byo-col">
                     <h4>Dressings (Included)</h4>
                     <ul class="simple-list">
-                        <li>Buttermilk Ranch</li>
-                        <li>1000 Island</li>
-                        <li>BBQ Ranch</li>
-                        <li>Fresh Lemon Squeeze</li>
-                        <li>Extra Virgin Olive Oil</li>
-                        <li>Oil &amp; Vinegar</li>
+                        <li>Buttermilk Ranch</li><li>1000 Island</li><li>Smoked Tomato Balsamic</li>
+                        <li>Honey Mustard Vinaigrette</li><li>Creamy Blue Cheese</li><li>Chipotle Ranch</li>
+                        <li>BBQ Ranch</li><li>Classic House Vinaigrette</li>
                     </ul>
                 </div>
                 <div class="byo-col">
                     <h4>Premium Proteins</h4>
                     <p style="font-size:0.82rem;margin-bottom:10px;color:#888;"><strong>Half $2.50 / Full $3.50</strong></p>
-                    <ul>
-                        <li><label><input type="checkbox" data-price="3.50" onchange="calcSalad()"> Corned Beef</label></li>
-                        <li><label><input type="checkbox" data-price="3.50" onchange="calcSalad()"> Tri Tip Beef</label></li>
-                        <li><label><input type="checkbox" data-price="3.50" onchange="calcSalad()"> Taco Beef</label></li>
-                        <li><label><input type="checkbox" data-price="3.50" onchange="calcSalad()"> Pot Roast</label></li>
-                        <li><label><input type="checkbox" data-price="3.50" onchange="calcSalad()"> Diced Chicken</label></li>
-                        <li><label><input type="checkbox" data-price="3.50" onchange="calcSalad()"> Pulled Pork</label></li>
-                        <li><label><input type="checkbox" data-price="3.50" onchange="calcSalad()"> Diced Brisket</label></li>
-                        <li><label><input type="checkbox" data-price="3.50" onchange="calcSalad()"> Diced Steak</label></li>
+                    <ul class="simple-list">
+                        <li>Sliced Grilled Chicken</li><li>Pulled Pork Shoulder</li><li>Smoky Beef Brisket</li>
+                        <li>Beef Tenderloin Steak</li><li>Diced Corned Beef</li><li>Thin Sliced Tri-Tip Beef</li>
+                        <li>House Made Taco Beef</li><li>Slow Cooked Pot Roast</li>
                     </ul>
+                </div>
+            </div>
+        </div>
+        <div style="margin-top:30px;">
+            <h3 style="color:var(--secondary);margin-bottom:18px;text-align:center;font-size:1.7rem;">Salad Combos</h3>
+            <div class="menu-grid">
+                <div class="menu-item" onclick="this.classList.toggle('flipped')">
+                    <div class="menu-item-inner">
+                        <div class="menu-front"><div class="menu-front-no-img">🥗</div>
+                            <div class="menu-front-details"><div><div class="menu-front-name">The Legendary Soup &amp; Salad</div><span class="price-tag">$11.50</span></div><div class="flip-hint">Hover or tap to flip &crarr;</div></div>
+                        </div>
+                        <div class="menu-back"><h4>The Legendary Soup &amp; Salad</h4><p>Small crisp iceberg salad with any 2 standard toppings &amp; choice of dressing, paired with a bowl of homemade soup. Upgrade to Large &mdash; add $2.25.</p><div class="back-price">$11.50</div></div>
+                    </div>
+                </div>
+                <div class="menu-item" onclick="this.classList.toggle('flipped')">
+                    <div class="menu-item-inner">
+                        <div class="menu-front"><div class="menu-front-no-img">🥗</div>
+                            <div class="menu-front-details"><div><div class="menu-front-name">The Spud &amp; Salad Half-Stack</div><span class="price-tag">$13.00</span></div><div class="flip-hint">Hover or tap to flip &crarr;</div></div>
+                        </div>
+                        <div class="menu-back"><h4>The Spud &amp; Salad Half-Stack</h4><p>Small crisp iceberg salad with any 2 standard toppings &amp; choice of dressing, plus a half-size Fully Loaded Spud.</p><div class="back-price">$13.00</div></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1404,41 +1159,31 @@
 
     <!-- SIDES & DESSERTS -->
     <div class="menu-category reveal">
-        <h2>🍦 Sides &amp; Desserts</h2>
-        <div class="byo-wrap">
-            <div class="byo-cols">
+        <h2>Sides &amp; Desserts</h2>
+        <div class="byo-container">
+            <div class="byo-columns">
                 <div class="byo-col">
                     <h4>Sides and Adds</h4>
                     <p style="font-weight:700;margin-bottom:4px;font-size:0.88rem;">Small $4 (1 cup) | Large $7 (2 cups)</p>
                     <p style="font-size:0.82rem;margin-bottom:10px;color:#888;">Adds are $1 per 4oz serving</p>
-                    <ul class="simple-list">
-                        <li>Baked Beans</li>
-                        <li>Coleslaw</li>
-                        <li>Mac &amp; Cheese</li>
-                        <li>Pork Green Chili</li>
-                        <li>Cowboy Chili</li>
-                    </ul>
+                    <ul class="simple-list"><li>Baked Beans</li><li>Coleslaw</li><li>Mac &amp; Cheese</li><li>Pork Green Chili</li><li>Cowboy Chili</li></ul>
                 </div>
                 <div class="byo-col">
-                    <h4>Ice Cream 🍦</h4>
+                    <h4>Ice Cream</h4>
                     <p style="font-weight:700;margin-bottom:8px;">Vanilla &bull; Chocolate &bull; Dole Whip</p>
                     <ul class="simple-list">
-                        <li><span>Small Cone</span><span style="font-weight:800;">$2.00</span></li>
-                        <li><span>Large Cone</span><span style="font-weight:800;">$4.00</span></li>
-                        <li><span>Waffle Bowl</span><span style="font-weight:800;">$4.50</span></li>
-                        <li><span>Small Bowl</span><span style="font-weight:800;">$3.25</span></li>
-                        <li><span>Large Bowl</span><span style="font-weight:800;">$4.50</span></li>
+                        <li><span>Cake Cone</span><span style="font-weight:700;">$3.00</span></li>
+                        <li><span>Waffle Cone</span><span style="font-weight:700;">$4.00</span></li>
+                        <li><span>Waffle Bowl</span><span style="font-weight:700;">$4.75</span></li>
+                        <li><span>Small Bowl</span><span style="font-weight:700;">$3.25</span></li>
+                        <li><span>Large Bowl</span><span style="font-weight:700;">$4.50</span></li>
                     </ul>
-                    <p style="margin-top:10px;font-size:0.88rem;"><strong>Toppings (.25 extra):</strong> Chocolate Sauce, Caramel, Strawberry, Sprinkles, Whipped Cream.</p>
+                    <p style="margin-top:10px;font-size:0.88rem;"><strong>Toppings (.25 extra):</strong> Chocolate Sauce, Caramel Sauce, Strawberry Sauce, Strawberry Topping, Sprinkles, Whipped Cream.</p>
                 </div>
                 <div class="byo-col">
-                    <h4>Ice Cream Shakes 🥤</h4>
+                    <h4>Shakes &amp; Malts</h4>
                     <p style="font-weight:700;margin-bottom:8px;">Small $4 | Large $7</p>
-                    <ul class="simple-list">
-                        <li>Chocolate</li>
-                        <li>Strawberry</li>
-                        <li>Vanilla</li>
-                    </ul>
+                    <ul class="simple-list"><li>Chocolate</li><li>Strawberry</li><li>Vanilla</li></ul>
                 </div>
             </div>
         </div>
@@ -1446,22 +1191,20 @@
 
     <!-- SOUPS & DRINKS -->
     <div class="menu-category reveal">
-        <h2>🍜 Fresh Soups &amp; Drinks</h2>
-        <div class="byo-wrap">
-            <div class="byo-cols">
+        <h2>Fresh Soups &amp; Drinks</h2>
+        <div class="byo-container">
+            <div class="byo-columns">
                 <div class="byo-col">
                     <h4>Fresh Made Soups</h4>
                     <ul class="simple-list">
-                        <li><span>Loaded Potato Soup</span><span style="font-weight:700;">8oz $4 — 16oz $7</span></li>
-                        <li><span>Beef Goulash</span><span style="font-weight:700;">8oz $4 — 16oz $7</span></li>
-                        <li><span>Soup of the Day</span><span style="font-weight:700;">8oz $4 — 16oz $7</span></li>
+                        <li><span>Loaded Potato Soup</span><span style="font-weight:700;">8oz $4 &mdash; 16oz $7</span></li>
+                        <li><span>Beef Goulash</span><span style="font-weight:700;">8oz $4 &mdash; 16oz $7</span></li>
+                        <li><span>Soup of the Day</span><span style="font-weight:700;">8oz $4 &mdash; 16oz $7</span></li>
                     </ul>
                 </div>
                 <div class="byo-col">
                     <h4>Fountain Sodas</h4>
-                    <ul class="simple-list">
-                        <li>Sm $3.25 &mdash; Med $3.50 &mdash; Lrg $3.75</li>
-                    </ul>
+                    <ul class="simple-list"><li>Sm $3.25 &mdash; Med $3.50 &mdash; Lrg $3.75</li></ul>
                 </div>
             </div>
         </div>
@@ -1469,22 +1212,13 @@
 
     <!-- FAMILY PACKS -->
     <div class="menu-category reveal">
-        <h2>👨‍👩‍👧‍👦 Family Packs</h2>
-        <div class="family-card">
-            <h3>Mix and match your family's favorites!</h3>
+        <h2>Family Packs</h2>
+        <div class="family-pack-card">
+            <h3 style="color:var(--secondary);font-size:1.5rem;margin-bottom:5px;">Mix and match your family&rsquo;s favorites!</h3>
             <ul class="pack-list">
-                <li>
-                    <div><strong>Family Pack of 4</strong><br><small style="color:#888;">4 Spuds + 4 Sodas &middot; Save $7</small></div>
-                    <span class="pack-price">$43.00</span>
-                </li>
-                <li>
-                    <div><strong>Family Pack of 6</strong><br><small style="color:#888;">6 Spuds + 6 Sodas &middot; Save $15</small></div>
-                    <span class="pack-price">$60.00</span>
-                </li>
-                <li>
-                    <div><strong>The Big Feast 12</strong><br><small style="color:#888;">12 Spuds + 12 Sodas &middot; Save $20</small></div>
-                    <span class="pack-price">$120.00</span>
-                </li>
+                <li><div><strong>Family Pack of 4</strong><br><small style="color:#888;">4 Spuds + 4 Sodas &middot; Save $7</small></div><span class="price">$43.00</span></li>
+                <li><div><strong>Family Pack of 6</strong><br><small style="color:#888;">6 Spuds + 6 Sodas &middot; Save $15</small></div><span class="price">$60.00</span></li>
+                <li><div><strong>The Big Feast 12</strong><br><small style="color:#888;">12 Spuds + 12 Sodas &middot; Save $20</small></div><span class="price">$120.00</span></li>
             </ul>
         </div>
     </div>
@@ -1492,142 +1226,105 @@
 
 <!-- ABOUT -->
 <div id="about" class="page-section">
-    <div class="section-heading reveal"><h1>Our Story 🥔</h1></div>
-
     <div class="stats-bar reveal">
-        <div>
-            <div class="stat-num" data-target="20">0</div>
-            <div class="stat-label">Years of Culinary Experience</div>
-        </div>
-        <div>
-            <div class="stat-num" data-target="3">0</div>
-            <div class="stat-label">James Beard Award Mentors</div>
-        </div>
-        <div>
-            <div class="stat-num" data-target="15">0</div>
-            <div class="stat-label">Loaded Spud Creations</div>
-        </div>
-        <div>
-            <div class="stat-num" data-target="1">0</div>
-            <div class="stat-label">Hometown We Call Home</div>
-        </div>
+        <div><div class="stat-num" data-target="20">0</div><div class="stat-label">Years of Culinary Experience</div></div>
+        <div><div class="stat-num" data-target="3">0</div><div class="stat-label">James Beard Award Mentors</div></div>
+        <div><div class="stat-num" data-target="15">0</div><div class="stat-label">Loaded Spud Creations</div></div>
+        <div><div class="stat-num" data-target="1">0</div><div class="stat-label">Hometown We Call Home</div></div>
     </div>
-
     <div class="content-split reveal">
         <div class="text-block">
-            <h2>Welcome to Riverton's Favorite Spud Shop</h2>
+            <h2>Our Story</h2>
             <p>Spud Man is a locally owned and operated business in the heart of Riverton, Wyoming. We believe in good food, large portions, and treating our customers like neighbors.</p>
-            <p>We have moved! Come see us at our new, larger location on Main Street to serve you better. We can't wait to see you there!</p>
+            <p>Come find us on Main Street &mdash; we are proud to call Riverton home and can&rsquo;t wait to serve you.</p>
             <div class="address-box">
-                <p><strong>New Address:</strong> 702 E. Main St., Riverton, WY 82501</p>
+                <p><strong>Address:</strong> 702 E. Main St., Riverton, WY 82501</p>
                 <p><strong>Phone:</strong> 307-463-5870</p>
             </div>
         </div>
-        <div class="img-block">
-            <img src="logo.JPG" alt="Spud Man Character">
-        </div>
+        <div class="img-block"><img src="logo.JPG" alt="Spud Man Character"></div>
     </div>
-
     <div class="bio-container reveal">
         <img src="chef.jpg" alt="Chef James Brady" class="bio-img">
         <div class="bio-text">
             <h3>Meet James Brady, the Spud Man</h3>
-            <p>James Brady, the owner and operator of Spud Man, is a Le Cordon Bleu graduate with over 20 years of culinary experience. He honed his skills in Las Vegas training under three James Beard Award-winning chefs, including the legendary Emeril Lagasse at Delmonico Steakhouse.</p>
-            <p>As the former owner of the Buffalo Jump Steakhouse and now Spud Man, James is dedicated to transforming the simple potato into a gourmet experience. He focuses on creative flavor combinations and sourcing the best local ingredients.</p>
+            <p>James Brady, the owner and operator of Spud Man, is a Le Cordon Bleu graduate with over 20 years of culinary experience. He honed his skills in Las Vegas training under three James Beard Award-winning chefs, including the legendary Emeril Lagasse at Delmonico Steakhouse. James brings his extensive background in fine dining and steakhouse cuisine to Riverton, focusing on exacting standards and exceptional food quality.</p>
+            <p>As the former owner of the Buffalo Jump Steakhouse and now Spud Man, James is dedicated to transforming the simple potato into a gourmet experience. He focuses on creative flavor combinations and sourcing the best local ingredients. James invites you to come in and taste the difference that passion and expertise make in every bite.</p>
         </div>
     </div>
 </div>
 
 <!-- EVENTS -->
 <div id="events" class="page-section">
-    <div class="section-heading reveal"><h1>Events &amp; Community 🎉</h1></div>
-
+    <h1 style="text-align:center;margin-bottom:38px;color:var(--secondary);font-weight:900;font-size:2.8rem;">Events &amp; Community</h1>
     <div class="event-box reveal">
-        <h2>🤝 Fundraising</h2>
+        <h2>Fundraising</h2>
         <p>Looking for a delicious way to raise money for your team, school, or organization? Host a Spud Man fundraiser!</p>
-        <p>We donate a percentage of sales from your event night back to your cause. It's easy, fun, and delicious.</p>
+        <p>We donate a percentage of sales from your event night back to your cause. It&rsquo;s easy, fun, and delicious.</p>
         <br>
-        <a href="tel:3074635870" class="btn-phone" style="display:inline-flex;background:var(--secondary);">📞 Call to Schedule</a>
+        <a href="tel:3074635870" class="btn-phone" style="display:inline-flex;background:var(--secondary);">Call to Schedule</a>
     </div>
-
     <div class="event-box reveal" style="transition-delay:.1s">
-        <h2>🎂 Catering</h2>
+        <h2>Catering</h2>
         <p>Weddings, Corporate Events, Reunions, and Parties.</p>
         <p>Let us handle the food! We offer a full baked potato bar setup that allows your guests to customize their meals. We bring the hot potatoes and all the cold/hot toppings you need.</p>
         <br>
-        <p><strong>📞 Call 307-463-5870 for a quote!</strong></p>
+        <p><strong>Call 307-463-5870 for a quote!</strong></p>
     </div>
 </div>
 
 <!-- FOOTER -->
 <footer>
     <div class="footer-grid">
-        <div class="footer-col">
-            <h4>Spud Man Riverton</h4>
-            <p>702 E. Main St.</p>
-            <p>Riverton, WY 82501</p>
-        </div>
-        <div class="footer-col">
-            <h4>Hours</h4>
-            <p>Mon &ndash; Sat: 11:00 AM &ndash; 7:00 PM</p>
-            <p>Sunday: Closed</p>
-        </div>
-        <div class="footer-col">
-            <h4>Contact</h4>
+        <div class="footer-col"><h4>Spud Man Riverton</h4><p>702 E. Main St.</p><p>Riverton, WY 82501</p></div>
+        <div class="footer-col"><h4>Hours</h4><p>Mon &ndash; Sat: 11:00 AM &ndash; 7:00 PM</p><p>Sunday: Closed</p></div>
+        <div class="footer-col"><h4>Contact</h4>
             <p><a href="tel:3074635870" style="font-size:1.3rem;font-weight:900;color:var(--primary);">307-463-5870</a></p>
             <p><a href="mailto:jim@spudmanusa.com">jim@spudmanusa.com</a></p>
         </div>
     </div>
-    <div class="footer-bottom">&copy; 2026 Spud Man Riverton. Made with 🥔 in Riverton, WY.</div>
+    <div class="footer-bottom">&copy; 2026 Spud Man Riverton.</div>
 </footer>
 
-<!-- SURPRISE ME MODAL -->
+<!-- SURPRISE MODAL -->
 <div class="surprise-overlay" id="surprise-overlay" onclick="overlayClick(event)">
     <div class="surprise-modal">
         <button class="modal-close" onclick="document.getElementById('surprise-overlay').classList.remove('show')">&#x2715;</button>
-        <h2>Your spud destiny has spoken...</h2>
+        <h2>The Spud Man has spoken&hellip;</h2>
         <span class="surprise-emoji" id="s-emoji">🥔</span>
         <div class="surprise-name"  id="s-name"></div>
         <div class="surprise-price" id="s-price"></div>
         <div class="surprise-desc"  id="s-desc"></div>
-        <button class="again-btn" onclick="pickSpud()">🎲 Pick Another!</button>
+        <button class="again-btn" onclick="pickSpud()">🎲 Pick Another</button>
     </div>
 </div>
 
 <script>
     const SPUDS = [
-        { name:"The Cattleman",          price:"$15.00", desc:"Butter, Tender Beef Steak, Cheddar Jack, Ranch Drizzle, Crispy Onions.",                           emoji:"🥩" },
-        { name:"The Fully Loaded Spud",  price:"$11.00", desc:"Butter, Cheddar Jack, Bacon, Sour Cream, Green Onions.",                                           emoji:"🥔" },
-        { name:"Brisket Cheese",         price:"$15.00", desc:"Butter, Cheddar Jack, Chopped Brisket, BBQ Sauce.",                                                emoji:"🍖" },
-        { name:"Smokehouse Stack",       price:"$14.50", desc:"Butter, Brisket, Cheddar Jack, Baked Beans, Ranch Drizzle, Bacon, Crispy Onions.",                 emoji:"💨" },
-        { name:"Tex Mex Supreme",        price:"$13.25", desc:"Butter, Taco Beef, Jalapenos, Nacho Cheese, Cheddar Jack, Sour Cream, Crispy Onions.",            emoji:"🌶️" },
-        { name:"Chili Cheese Spud",      price:"$12.25", desc:"Butter, Cowboy Chili, Cheddar Jack, Nacho Cheese, Sour Cream, Diced Onions.",                    emoji:"🍲" },
-        { name:"Broccoli Bacon Cheese",  price:"$13.25", desc:"Butter, Broccoli, Cheddar Jack, Nacho Cheese, Bacon.",                                            emoji:"🥦" },
-        { name:"Buffalo Ranch Chicken",  price:"$12.75", desc:"Butter, Buffalo Chicken, Ranch Drizzle, Cheddar Jack, Nacho Cheese, Green Onions.",              emoji:"🐔" },
-        { name:"Pot Roast Beef Spud",    price:"$14.00", desc:"Butter, Cheddar Jack, Tender Pot Roast, Roasted Vegetables, Brown Gravy, Crispy Onions.",        emoji:"🍛" },
-        { name:"Hog Heaven",             price:"$15.00", desc:"Butter, Pulled Pork, Cheddar Jack, Bacon, Sour Cream, BBQ Sauce, Coleslaw.",                     emoji:"🐷" },
-        { name:"Pork Green Chili Spud",  price:"$13.25", desc:"Pork Green Chili, Butter, Cheddar Jack, Sour Cream, Green Onion.",                               emoji:"🌿" },
-        { name:"BBQ Chicken Delight",    price:"$12.25", desc:"Butter, Cheddar Jack, Cheese Sauce, BBQ Chicken, BBQ Sauce, Green Onion.",                       emoji:"🍗" },
-        { name:"Riverton Reuben",        price:"$14.00", desc:"Butter, Swiss Cheese, Corned Beef, Tangy Sauerkraut, House-made 1000 Island.",                   emoji:"🥪" },
-        { name:"The Philly Cheese",      price:"$14.00", desc:"Butter, Shredded Cheese, Cheese Sauce, Sliced Roast Beef, Mushroom, Peppers, Onion.",            emoji:"🧀" },
+        { name:"The Cattleman",          price:"$15.00", desc:"Butter, Tender Beef Steak, Cheddar Jack, Ranch Drizzle, Crispy Onions.",                          emoji:"🥩" },
+        { name:"The Fully Loaded Spud",  price:"$11.00", desc:"Butter, Cheddar Jack, Bacon, Sour Cream, Green Onions.",                                          emoji:"🥔" },
+        { name:"Brisket Cheese",         price:"$15.00", desc:"Butter, Cheddar Jack, Chopped Brisket, BBQ Sauce.",                                               emoji:"🍖" },
+        { name:"Smokehouse Stack",       price:"$14.50", desc:"Butter, Brisket, Cheddar Jack, Baked Beans, Ranch Drizzle, Bacon, Crispy Onions.",                emoji:"💨" },
+        { name:"Tex Mex Supreme",        price:"$13.25", desc:"Butter, Taco Beef, Jalapenos, Nacho Cheese, Cheddar Jack, Sour Cream, Crispy Onions.",           emoji:"🌶️" },
+        { name:"Chili Cheese Spud",      price:"$12.25", desc:"Butter, Cowboy Chili, Cheddar Jack, Nacho Cheese, Sour Cream, Diced Onions.",                   emoji:"🍲" },
+        { name:"Broccoli Bacon Cheese",  price:"$13.25", desc:"Butter, Broccoli, Cheddar Jack, Nacho Cheese, Bacon.",                                           emoji:"🥦" },
+        { name:"Buffalo Ranch Chicken",  price:"$12.75", desc:"Butter, Buffalo Chicken, Ranch Drizzle, Cheddar Jack, Nacho Cheese, Green Onions.",             emoji:"🐔" },
+        { name:"Pot Roast Beef Spud",    price:"$14.00", desc:"Butter, Cheddar Jack, Tender Pot Roast, Roasted Vegetables, Brown Gravy, Crispy Onions.",       emoji:"🍛" },
+        { name:"Hog Heaven",             price:"$15.00", desc:"Butter, Pulled Pork, Cheddar Jack, Bacon, Sour Cream, BBQ Sauce, Coleslaw.",                    emoji:"🐷" },
+        { name:"Pork Green Chili Spud",  price:"$13.25", desc:"Pork Green Chili, Butter, Cheddar Jack, Sour Cream, Green Onion.",                              emoji:"🌿" },
+        { name:"Riverton Reuben",        price:"$14.00", desc:"Butter, Swiss Cheese, Corned Beef, Tangy Sauerkraut, House-made 1000 Island.",                  emoji:"🥪" },
+        { name:"The Philly Cheese",      price:"$14.00", desc:"Butter, Shredded Cheese, Cheese Sauce, Sliced Roast Beef, Mushroom, Peppers, Onion.",           emoji:"🧀" },
         { name:"Chili Mac & Cheese Spud",price:"$14.00", desc:"Butter, Cheddar Jack, Cheese Sauce, Cowboy Chili, Mac & Cheese, Sour Cream.",                  emoji:"🍝" },
     ];
 
-    function surpriseMe() {
-        pickSpud();
-        confetti();
-    }
+    function surpriseMe() { pickSpud(); }
 
     function pickSpud() {
         const s = SPUDS[Math.floor(Math.random() * SPUDS.length)];
         document.getElementById('s-name').textContent  = s.name;
         document.getElementById('s-price').textContent = s.price;
         document.getElementById('s-desc').textContent  = s.desc;
-        const em = document.getElementById('s-emoji');
-        em.textContent = s.emoji;
-        em.style.animation = 'none';
-        em.offsetHeight;
-        em.style.animation = 'spin-pop 0.5s cubic-bezier(0.34,1.56,0.64,1)';
+        document.getElementById('s-emoji').textContent = s.emoji;
         document.getElementById('surprise-overlay').classList.add('show');
     }
 
@@ -1636,51 +1333,11 @@
             document.getElementById('surprise-overlay').classList.remove('show');
     }
 
-    function confetti() {
-        const colors = ['#FFB300','#FF6B35','#FF3CAC','#5D4037','#388E3C','#d12027','#ffffff'];
-        for (let i = 0; i < 70; i++) {
-            setTimeout(() => {
-                const el = document.createElement('div');
-                el.className = 'confetti-bit';
-                el.style.cssText = [
-                    'left:' + (Math.random()*100) + 'vw',
-                    'top:-12px',
-                    'width:' + (Math.random()*8+5) + 'px',
-                    'height:' + (Math.random()*8+5) + 'px',
-                    'background:' + colors[Math.floor(Math.random()*colors.length)],
-                    'border-radius:' + (Math.random()>.5?'50%':'3px'),
-                    'animation-duration:' + (Math.random()*1.2+0.8) + 's',
-                    'animation-delay:' + (Math.random()*0.4) + 's'
-                ].join(';');
-                document.body.appendChild(el);
-                setTimeout(() => el.remove(), 2500);
-            }, i * 18);
-        }
-    }
-
-    // Floating potatoes in hero
-    (function() {
-        const c = document.getElementById('fp');
-        const emojis = ['🥔','🥔','🥔','🧀','🥩','🌶️','🍗'];
-        for (let i = 0; i < 14; i++) {
-            const el = document.createElement('div');
-            el.className = 'potato-float';
-            el.textContent = emojis[Math.floor(Math.random()*emojis.length)];
-            el.style.left = (Math.random()*100) + '%';
-            el.style.fontSize = (Math.random()*1.5+1) + 'rem';
-            el.style.animationDuration = (Math.random()*9+6) + 's';
-            el.style.animationDelay    = (Math.random()*9) + 's';
-            c.appendChild(el);
-        }
-    })();
-
-    // Hamburger
     function toggleNav() {
         document.getElementById('main-nav').classList.toggle('open');
         document.getElementById('hamburger').classList.toggle('open');
     }
 
-    // Page switching
     function showPage(id) {
         document.querySelectorAll('.page-section').forEach(p => p.classList.remove('active-page'));
         document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
@@ -1690,11 +1347,10 @@
         document.getElementById('main-nav').classList.remove('open');
         document.getElementById('hamburger').classList.remove('open');
         window.scrollTo({ top: 0, behavior: 'smooth' });
-        setTimeout(checkReveal, 120);
-        if (id === 'about') setTimeout(animateStats, 350);
+        setTimeout(checkReveal, 100);
+        if (id === 'about') setTimeout(animateStats, 300);
     }
 
-    // Scroll reveal
     function checkReveal() {
         document.querySelectorAll('.reveal').forEach(el => {
             if (el.getBoundingClientRect().top < window.innerHeight - 50)
@@ -1702,9 +1358,8 @@
         });
     }
     window.addEventListener('scroll', checkReveal, { passive: true });
-    setTimeout(checkReveal, 120);
+    setTimeout(checkReveal, 100);
 
-    // Animated stats (resets each visit to About)
     function animateStats() {
         document.querySelectorAll('.stat-num').forEach(el => {
             const target = parseInt(el.dataset.target);
@@ -1719,7 +1374,6 @@
         });
     }
 
-    // BYO spud calculator
     function calcBYO() {
         let total = 7.75;
         document.querySelectorAll('#byo-spud-form input[type=checkbox]:checked').forEach(cb => {
@@ -1728,16 +1382,6 @@
         document.getElementById('byo-total').textContent = '$' + total.toFixed(2);
     }
 
-    // BYO salad calculator
-    function calcSalad() {
-        let total = 4.75;
-        document.querySelectorAll('#byo-salad-form input[type=checkbox]:checked').forEach(cb => {
-            total += parseFloat(cb.dataset.price);
-        });
-        document.getElementById('salad-total').textContent = '$' + total.toFixed(2);
-    }
-
-    // Temp alert
     if (new Date() < new Date('2025-12-10T00:00:00'))
         document.getElementById('temp-alert').style.display = 'block';
 </script>
