@@ -18,7 +18,7 @@ tags: [menu, profitability, finance]
 > One system for costing, pricing, and ranking every menu item across both locations. Fill in real numbers from invoices — the structure is done, the data is yours. Review quarterly (calendar reminders: Oct, Jan, Apr, Jul).
 
 ## 1. Plate Cost Cards
-Every menu item gets one card. Costs come from **actual invoices**, updated whenever a vendor price moves >5%.
+Every menu item gets one card. Costs come from **actual invoices** (Sysco / US Foods — see [[Vendor Master List]]), updated whenever a vendor price moves >5%.
 
 ### Template
 ```markdown
@@ -84,9 +84,9 @@ Waste is food cost you already paid. This section plugs into the existing [[Zero
 | Metric | Riverton | Casper | Target |
 |--------|----------|--------|--------|
 | Gross sales | | | |
-| Food cost % | | | 28–30% |
+| Food cost % | | | <32% → 28–30% |
 | Waste % of food cost | | | < 2% |
-| Labor % | | | (set per location) |
+| Labor % | | | <25% (per KMD) |
 | Avg ticket | | | |
 | Top Stallion | | | |
 | Worst Stray | | | |
@@ -102,4 +102,6 @@ Same menu, two markets — expect the Corral to look *different* in Casper (mall
 
 ---
 
-*Related: [[Casper Launch Master Plan]] · [[5-Day Staff Training Program v2]] · Recipe cards in 02-Menu & Recipes · [[Spud Man HQ]]*
+*Related: [[Casper Launch Master Plan]] · [[5-Day Staff Training Program v2]] · [[Menu Profitability Analysis]] · [[Key Metrics Dashboard]] · [[Zero Waste Potato System]] · [[Spud Man HQ]]*
+
+*Last updated: 2026-07-10*

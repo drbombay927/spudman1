@@ -32,7 +32,7 @@ tags: [training, people, casper]
 - Welcome + Spud Man story: Riverton, the cowboy way, where we're headed
 - Brand voice: how we talk to guests (friendly, western, genuine — never scripted-corporate)
 - Tour: stations, storage, office, safety equipment
-- Paperwork, uniform, schedule app
+- Paperwork, uniform, schedule app — run the [[New Hire Onboarding Checklist]]
 
 **Midday (safety, ~2 hrs)**
 - Food safety fundamentals: temps (the Danger Zone), handwashing standard, glove rules, allergen basics (dairy, gluten in some toppings — know the map)
@@ -83,7 +83,7 @@ tags: [training, people, casper]
   - [ ] Fully Stuffed Spud
   - [ ] Brisket Rancher
   - [ ] Buffalo Ranch Chicken
-  - [ ] *(remaining menu items — list per current menu)*
+  - [ ] *(remaining menu items — list per [[Current Menu Items]])*
 - Special requests & allergy builds: mod protocol, dedicated utensils
 - Speed baseline: 10 correct builds, timed (target set by trainer; accuracy first, speed follows)
 
@@ -118,7 +118,7 @@ tags: [training, people, casper]
 *"Ride the whole trail solo — we're right behind you."*
 
 - Trainee works a **real full shift** at rotating stations; trainer shadows but does not touch
-- Opening OR closing checklist executed by trainee, trainer verifying each line
+- Opening OR closing checklist executed by trainee, trainer verifying each line ([[Opening & Closing Checklist]])
 - End-of-shift: full checklist review, gaps re-trained on the spot or scheduled
 - **Wrangler ceremony** (yes, really): crew gathers, GM presents name tag / hat pin. Culture is built in these two minutes.
 
@@ -142,9 +142,11 @@ tags: [training, people, casper]
 - [ ] This program + one sign-off packet per trainee
 - [ ] Recipe cards with photos, all menu items
 - [ ] Station diagram + par sheets
-- [ ] Opening/closing checklists
+- [ ] [[Opening & Closing Checklist]]
 - [ ] Blank waste log + temp log
 
 ---
 
-*Related: [[Casper Launch Master Plan]] · [[Menu Profitability Framework]] · [[Spud Man HQ]]*
+*Related: [[Casper Launch Master Plan]] · [[Menu Profitability Framework]] · [[Staff Training Overview]] · [[Employee Handbook]] · [[Spud Man HQ]]*
+
+*Last updated: 2026-07-10*

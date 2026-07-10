@@ -133,4 +133,6 @@ tags: [casper, launch, plan]
 
 ---
 
-*Related: [[Strategic Review - July 2026]] · [[5-Day Staff Training Program v2]] · [[Menu Profitability Framework]] · [[Spud Man HQ]]*
+*Related: [[Strategic Review - July 2026]] · [[5-Day Staff Training Program v2]] · [[Menu Profitability Framework]] · [[Vendor Master List]] · [[Spud Man HQ]]*
+
+*Last updated: 2026-07-10*
