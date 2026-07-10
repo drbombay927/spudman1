@@ -2,11 +2,17 @@
 type: sop
 location: both
 status: active
-updated: 2026-07-10
+created: 2026-07-10
+tags: [menu, profitability, finance]
 ---
 
 # 💰 Menu Profitability Framework
 *Every spud earns its keep — or it rides off the menu.*
+
+> Parent: [[Spud Man HQ]] · Extends: [[Menu Profitability Analysis]] · Data source: [[Key Metrics Dashboard]]
+
+> [!warning] Where we stand (Apr 2026 KPI update)
+> Food cost **34.8%** against a <32% target; prime cost **63.3%** against <58%. This framework exists to close that gap *before* Casper's mall rent makes it more expensive. Interim target: **<32%** food cost by Casper opening; **30%** by year-end.
 
 > [!info] Purpose
 > One system for costing, pricing, and ranking every menu item across both locations. Fill in real numbers from invoices — the structure is done, the data is yours. Review quarterly (calendar reminders: Oct, Jan, Apr, Jul).
@@ -45,7 +51,7 @@ Menu price: $__ · Food cost %: __% · Gross margin $: $__
 | Metric | Target | Red flag |
 |--------|--------|----------|
 | Item food cost % | ≤ 30% (proteins may run to 33% if margin $ is strong) | > 35% |
-| Blended store food cost % | 28–30% | > 32% two months running |
+| Blended store food cost % | **<32% now** (per [[Key Metrics Dashboard]]), 28–30% by year-end | > 34% any month |
 | Margin dollars per item | The real king — a 33% item earning $7 margin beats a 25% item earning $4 | — |
 
 **Rule: you bank margin dollars, not percentages.** Rank items by margin $ first, % second.
@@ -68,7 +74,7 @@ Each quarter, plot every item on two axes: **popularity** (units sold vs. menu a
 5. **Combo math:** a combo must add margin dollars vs. the item alone, not just ticket size.
 
 ## 5. Zero-Waste Tie-In
-Waste is food cost you already paid.
+Waste is food cost you already paid. This section plugs into the existing [[Zero Waste Potato System]] — it's the money side of that SOP.
 - **Daily waste log** (crew-entered, 30 seconds): item, quantity, reason (over-prep / expired / mistake / drop)
 - **Weekly review:** waste $ ÷ sales = waste %. Target **< 2% of food cost**.
 - Over-baked potatoes have a second life: next-day breakfast-style items, soup base, or staff meal — decide the ladder, write it into prep SOPs

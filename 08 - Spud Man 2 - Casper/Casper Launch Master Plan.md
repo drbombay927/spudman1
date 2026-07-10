@@ -2,11 +2,14 @@
 type: plan
 location: casper
 status: active
-updated: 2026-07-10
+created: 2026-07-10
+tags: [casper, launch, plan]
 ---
 
 # 🚀 Casper Launch Master Plan — Eastridge Mall
-*Spud Man #2 · Former Flaming Wok space · Target opening: August 2026*
+*Spud Man #2 · Former Flaming Wok space · Lease executed 6/25/26 · Target opening: August 2026*
+
+> Parent: [[Spud Man HQ]]
 
 > [!warning] The Clock
 > Today is **July 10, 2026**. An August opening means **6–8 weeks out**. This doc is the single source of truth — if a task isn't here with an owner and a date, it isn't real. Review every Sunday night; update statuses live.
@@ -54,7 +57,7 @@ updated: 2026-07-10
 - [ ] Review lease exhibits for mall rules: hours of operation clause, percentage rent reporting, marketing fund obligations
 
 ### 3. 🤠 Hiring & Training
-- [ ] Define the opening roster: 1 GM/shift lead + ~6–8 crew for mall hours, 7 days (mall hours are longer than Riverton's — staff for it)
+- [ ] Define the opening roster: 1 GM/shift lead + ~6–8 crew for mall hours, 7 days (Riverton runs Mon–Fri 11–6 / Sat 11:30–3 — Eastridge will demand roughly *double* the weekly service hours; staff and budget for it)
 - [ ] Post openings NOW (Indeed, Facebook local groups, mall job board, "Now Hiring — Get Loaded the Cowboy Way" window sign)
 - [ ] Interviews weeks of July 13–27; hire by ~Aug 1
 - [ ] **Secret weapon:** bring the Casper GM/lead to Riverton for 1–2 weeks of embedded work *before* training week — they learn the culture at the source
@@ -62,7 +65,7 @@ updated: 2026-07-10
 - [ ] One or two Riverton veterans on loan for opening week (schedule + pay bump agreed in advance)
 
 ### 4. 🥔 Supply Chain
-- [ ] Confirm primary distributor delivers to Eastridge (mall receiving dock rules: delivery windows, dock access)
+- [ ] Confirm Sysco and US Foods deliver to Eastridge (existing accounts on [[Vendor Master List]]; mall receiving dock rules: delivery windows, dock access)
 - [ ] Build Casper par sheets — start at ~120% of Riverton equivalents for opening surge, tune weekly
 - [ ] **Decide the brisket question:** Riverton commissary smokes for both (food consistency, but a 120-mile cold chain) vs. Casper smokes its own (equipment + training). *Decide by mid-July; it drives equipment orders.*
 - [ ] Potato supplier: confirm volume pricing at two-location scale — this is your #1 ingredient, renegotiate with the new volume

@@ -2,11 +2,14 @@
 type: training
 location: both
 status: active
-updated: 2026-07-10
+created: 2026-07-10
+tags: [training, people, casper]
 ---
 
 # 🤠 5-Day Staff Training Program v2
 *From greenhorn to trail-ready in five days — the Spud Man way.*
+
+> Parent: [[Spud Man HQ]] · Replaces/extends: [[Staff Training Overview]] · Pairs with: [[New Hire Onboarding Checklist]] and [[Employee Handbook]]
 
 > [!info] What changed in v2
 > This version is **trainer-portable**: any certified Trail Boss can run it at any location without Jim in the building. Every module has a lesson block, a hands-on block, and a **sign-off checkbox**. Nobody works a solo station until their checklist is signed.
@@ -39,7 +42,7 @@ updated: 2026-07-10
 **Afternoon (the potato, ~3 hrs)**
 - The Spud Man bake: sizing, washing, oiling/salting spec, oven loading pattern, bake time/temp, doneness test, hold procedure & max hold time
 - Hands-on: trainee runs one full oven load start to finish
-- Waste philosophy: every potato costs money — track, don't trash; end-of-day potato count
+- Waste philosophy: the [[Zero Waste Potato System]] — every potato costs money; track, don't trash; end-of-day potato count
 
 **Day 1 Sign-offs**
 - [ ] Handwashing demo passed
